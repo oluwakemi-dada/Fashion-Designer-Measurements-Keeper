@@ -48,7 +48,7 @@ router.post(
       // Save in database
       await user.save();
 
-      // JWT stuffs......
+      // JWT stuffs... Get the user id
       const payload = {
         user: {
           id: user.id,
