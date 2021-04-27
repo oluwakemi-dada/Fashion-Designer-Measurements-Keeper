@@ -48,6 +48,7 @@ router.post(
       // Save in database
       await user.save();
 
+      // Log in the user immediately
       // JWT stuffs... Get the user id
       const payload = {
         user: {
@@ -56,12 +57,17 @@ router.post(
       };
 
       // Generate a token
-      jwt.sign(payload, config.get('jwtSecret'), {
-        expiresIn: 360000
-      }, (err, token) => {
-        if(err) throw err
-        res.json({token})
-      });
+      jwt.sign(
+        payload,
+        config.get('jwtSecret'),
+        {
+          expiresIn: 360000,
+        },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
     } catch (err) {
       console.error(err.message);
       res.status(500).send('Server Error');
