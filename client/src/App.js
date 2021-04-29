@@ -5,28 +5,25 @@ import Home from './components/pages/Home';
 import CreateContact from './components/pages/CreateContact';
 
 import ContactState from './context/contact/ContactState';
-import FormContext from './context/form/FormState';
 import './App.css';
 
 const App = () => {
   return (
     <ContactState>
-      <FormContext>
-        <Router>
-          <Fragment>
-            <Navbar />
-            <div className='container'>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/create' component={CreateContact} />
-                {/*  <Route exact path="/view/:id" component={ViewContact} /> */}
-                {/* <Route exact path="/edit/:id" component={EditContact} /> */}
-                {/*<Route component={NotFoundPage} /> */}
-              </Switch>
-            </div>
-          </Fragment>
-        </Router>
-      </FormContext>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/create' component={CreateContact} />
+              {/*  <Route exact path="/view/:id" component={ViewContact} /> */}
+              {/* <Route exact path="/edit/:id" component={EditContact} /> */}
+              {/*<Route component={NotFoundPage} /> */}
+            </Switch>
+          </div>
+        </Fragment>
+      </Router>
     </ContactState>
   );
 };
