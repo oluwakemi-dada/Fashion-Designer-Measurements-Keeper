@@ -203,7 +203,6 @@ const ContactForm = () => {
     };
     console.log(formData);
     // Add to contact context
-    
   };
 
   return (
@@ -253,7 +252,7 @@ const ContactForm = () => {
           ))}
 
         {/* AGBADA FORM */}
-        {agbadaArr.length !== 0 && <h2>Trouser</h2>}
+        {agbadaArr.length !== 0 && <h2>Agbada</h2>}
         {agbadaArr.length !== 0 &&
           agbadaArr.map((agbada, index) => (
             <AgbadaForm
