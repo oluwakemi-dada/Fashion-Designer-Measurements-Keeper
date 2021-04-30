@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
+import TrouserForm from '../form/TrouserForm';
+import AgbadaForm from '../form/AgbadaForm';
+import CapForm from '../form/CapForm';
+import SuitTuxForm from '../form/SuitTuxForm';
+import WaistCoatForm from '../form/WaistCoatForm';
+import ShirtForm from '../form/ShirtForm';
+import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
 
 const ContactForm = () => {
   // GENERAL DATA
@@ -14,40 +21,28 @@ const ContactForm = () => {
   });
 
   // ROYAL BROCADE TOP DATA
-  const [royalBrocadeTopArr, setRoyalBrocadeTopArr] = useState([
-    {
-      name: '',
-      back: '',
-      chest: '',
-      length: '',
-      roundSleeve: '',
-      sleeveLength: '',
-      shortSleeveLength: '',
-      stomach: '',
-      neck: '',
-      cuffWrist: '',
-      threeFourSleeve: '',
-      threeFourRoundSleeve: '',
-    },
-  ]);
+  const [royalBrocadeTopArr, setRoyalBrocadeTopArr] = useState([]);
 
   // TROUSER DATA
+  const [trouserArr, setTrouserArr] = useState([]);
 
   // AGBADA DATA
+  const [agbadaArr, setAgbadaArr] = useState([]);
 
   // CAP DATA
+  const [capArr, setCapArr] = useState([]);
 
   // SUIT TUX DATA
+  const [suitTuxArr, setSuitTuxArr] = useState([]);
 
   // WAIST COAT DATA
+  const [waistCoatArr, setWaistCoatArr] = useState([]);
 
   // SHIRT DATA
-
-  // SHIRT DATA
+  const [shirtArr, setShirtArr] = useState([]);
 
   // FEMALE MEASUREMENT DATA
-
-  // ----------------------------------------
+  const [femaleMeasurementArr, setFemaleMeasurementArr] = useState([]);
 
   // ADD ROYAL BROCADE FORM
   const addRoyalBrocadeTopForm = () => {
@@ -71,20 +66,121 @@ const ContactForm = () => {
   };
 
   // ADD TROUSER FORM
+  const addTrouserForm = () => {
+    setTrouserArr([
+      ...trouserArr,
+      {
+        name: '',
+        waist: '',
+        lap: '',
+        length: '',
+        knee: '',
+        flap: '',
+        hip: '',
+        lowerLimb: '',
+        mouthAnkle: '',
+      },
+    ]);
+  };
 
   // ADD AGBADA FORM
+  const addAgbadaForm = () => {
+    setAgbadaArr([
+      ...agbadaArr,
+      {
+        name: '',
+        sleeve: '',
+        length: '',
+      },
+    ]);
+  };
 
   // ADD CAP FORM
+  const addCapForm = () => {
+    setCapArr([
+      ...capArr,
+      {
+        name: '',
+        cap: '',
+      },
+    ]);
+  };
 
   // ADD SUIT TUX FORM
+  const addSuitTuxForm = () => {
+    setSuitTuxArr([
+      ...suitTuxArr,
+      {
+        name: '',
+        back: '',
+        chest: '',
+        length: '',
+        roundSleeve: '',
+        sleeveLength: '',
+        stomach: '',
+        cuffWrist: '',
+        lapel: '',
+      },
+    ]);
+  };
 
   // ADD WAIST COAT FORM
+  const addWaistCoatForm = () => {
+    setWaistCoatArr([
+      ...waistCoatArr,
+      {
+        name: '',
+        chest: '',
+        stomach: '',
+        length: '',
+      },
+    ]);
+  };
 
   // ADD SHIRT FORM
-
-  // ADD SHIRT FORM
+  const addShirtForm = () => {
+    setShirtArr([
+      ...shirtArr,
+      {
+        name: '',
+        back: '',
+        chest: '',
+        length: '',
+        roundSleeve: '',
+        sleeveLength: '',
+        shortSleeveLength: '',
+        stomach: '',
+        neck: '',
+        cuffWrist: '',
+      },
+    ]);
+  };
 
   // ADD FEMALE MEASUREMENT FORM
+  const addFemaleMeasurementForm = () => {
+    setFemaleMeasurementArr([
+      ...femaleMeasurementArr,
+      {
+        name: '',
+        shoulder: '',
+        bust: '',
+        underBust: '',
+        shoulderToBust: '',
+        stomach: '',
+        neck: '',
+        sleeveLength: '',
+        roundSleeve: '',
+        halfLength: '',
+        hip: '',
+        blouseLengthLong: '',
+        blouseLengthShort: '',
+        gownLengthLong: '',
+        gownLengthShort: '',
+        dressLengthLong: '',
+        dressLengthShort: '',
+      },
+    ]);
+  };
 
   // FORM SUBMIT
   const onSubmit = (e) => {
@@ -97,22 +193,30 @@ const ContactForm = () => {
       dob: generalData.dob,
       anniversary: generalData.anniversary,
       royalBrocadeTop: royalBrocadeTopArr,
+      trouser: trouserArr,
+      agbada: agbadaArr,
+      cap: capArr,
+      suitTux: suitTuxArr,
+      waistCoat: waistCoatArr,
+      shirt: shirtArr,
+      femaleMeasurement: femaleMeasurementArr,
     };
     console.log(formData);
     // Add to contact context
+    
   };
 
   return (
     <div>
       <div>
         <button onClick={addRoyalBrocadeTopForm}>Royal Brocade Top</button>
-        <button>Trouser</button>
-        <button>Agbada</button>
-        <button>Cap</button>
-        <button>Suit Tux</button>
-        <button>Waist Coat</button>
-        <button>Shirt</button>
-        <button>Female Measurement</button>
+        <button onClick={addTrouserForm}>Trouser</button>
+        <button onClick={addAgbadaForm}>Agbada</button>
+        <button onClick={addCapForm}>Cap</button>
+        <button onClick={addSuitTuxForm}>Suit Tux</button>
+        <button onClick={addWaistCoatForm}>Waist Coat</button>
+        <button onClick={addShirtForm}>Shirt</button>
+        <button onClick={addFemaleMeasurementForm}>Female Measurement</button>
       </div>
 
       <form onSubmit={onSubmit}>
@@ -135,6 +239,91 @@ const ContactForm = () => {
               setRoyalBrocadeTopArr={setRoyalBrocadeTopArr}
             />
           ))}
+
+        {/* TROUSER FORM */}
+        {trouserArr.length !== 0 && <h2>Trouser</h2>}
+        {trouserArr.length !== 0 &&
+          trouserArr.map((trouser, index) => (
+            <TrouserForm
+              key={index}
+              index={index}
+              trouserArr={trouserArr}
+              setTrouserArr={setTrouserArr}
+            />
+          ))}
+
+        {/* AGBADA FORM */}
+        {agbadaArr.length !== 0 && <h2>Trouser</h2>}
+        {agbadaArr.length !== 0 &&
+          agbadaArr.map((agbada, index) => (
+            <AgbadaForm
+              key={index}
+              index={index}
+              agbadaArr={agbadaArr}
+              setAgbadaArr={setAgbadaArr}
+            />
+          ))}
+
+        {/* CAP FORM */}
+        {capArr.length !== 0 && <h2>Cap</h2>}
+        {capArr.length !== 0 &&
+          capArr.map((cap, index) => (
+            <CapForm
+              key={index}
+              index={index}
+              capArr={capArr}
+              setCapArr={setCapArr}
+            />
+          ))}
+
+        {/* SUIT TUX FORM */}
+        {suitTuxArr.length !== 0 && <h2>Suit Tux</h2>}
+        {suitTuxArr.length !== 0 &&
+          suitTuxArr.map((suitTux, index) => (
+            <SuitTuxForm
+              key={index}
+              index={index}
+              suitTuxArr={suitTuxArr}
+              setSuitTuxArr={setSuitTuxArr}
+            />
+          ))}
+
+        {/* WAIST COAT FORM */}
+        {waistCoatArr.length !== 0 && <h2>Waist Coat</h2>}
+        {waistCoatArr.length !== 0 &&
+          waistCoatArr.map((waistCoat, index) => (
+            <WaistCoatForm
+              key={index}
+              index={index}
+              waistCoatArr={waistCoatArr}
+              setWaistCoatArr={setWaistCoatArr}
+            />
+          ))}
+
+        {/* SHIRT FORM */}
+        {shirtArr.length !== 0 && <h2>Shirt</h2>}
+        {shirtArr.length !== 0 &&
+          shirtArr.map((shirt, index) => (
+            <ShirtForm
+              key={index}
+              index={index}
+              shirtArr={shirtArr}
+              setShirtArr={setShirtArr}
+            />
+          ))}
+
+        {/* FEMALE MEASUREMENT FORM */}
+        {femaleMeasurementArr.length !== 0 && <h2>Female Measurement</h2>}
+        {femaleMeasurementArr.length !== 0 &&
+          femaleMeasurementArr.map((female, index) => (
+            <FemaleMeasurementForm
+              key={index}
+              index={index}
+              femaleMeasurementArr={femaleMeasurementArr}
+              setFemaleMeasurementArr={setFemaleMeasurementArr}
+            />
+          ))}
+
         <button type='submit' onSubmit={onSubmit}>
           ADD CONTACT
         </button>

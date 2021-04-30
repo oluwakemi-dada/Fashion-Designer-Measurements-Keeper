@@ -1,10 +1,6 @@
 import React from 'react';
 
-const RoyalBrocadeForm = ({
-  index,
-  royalBrocadeTopArr,
-  setRoyalBrocadeTopArr,
-}) => {
+const ShirtForm = ({ index, shirtArr, setShirtArr }) => {
   // Destructure data from the current index
   const {
     name,
@@ -17,13 +13,11 @@ const RoyalBrocadeForm = ({
     stomach,
     neck,
     cuffWrist,
-    threeFourSleeve,
-    threeFourRoundSleeve,
-  } = royalBrocadeTopArr[index];
+  } = shirtArr[index];
 
   // CHANGE INPUT VALUE
   const onChange = (e, i) => {
-    const values = [...royalBrocadeTopArr];
+    const values = [...shirtArr];
 
     if (e.target.name === 'name') {
       values[i].name = e.target.value;
@@ -45,22 +39,18 @@ const RoyalBrocadeForm = ({
       values[i].neck = e.target.value;
     } else if (e.target.name === 'cuffWrist') {
       values[i].cuffWrist = e.target.value;
-    } else if (e.target.name === 'threeFourSleeve') {
-      values[i].threeFourSleeve = e.target.value;
-    } else if (e.target.name === 'threeFourRoundSleeve') {
-      values[i].threeFourRoundSleeve = e.target.value;
     }
 
-    setRoyalBrocadeTopArr(values);
+    setShirtArr(values);
   };
 
   // REMOVE SINGLE FORM
   const onRemoveForm = (formIndex) => {
-    const newArr = royalBrocadeTopArr.filter(
-      (RBT) => royalBrocadeTopArr.indexOf(RBT) !== formIndex
+    const newArr = shirtArr.filter(
+      (shirt) => shirtArr.indexOf(shirt) !== formIndex
     );
 
-    setRoyalBrocadeTopArr(newArr);
+    setShirtArr(newArr);
   };
 
   return (
@@ -69,6 +59,7 @@ const RoyalBrocadeForm = ({
       <div
         onClick={() => {
           onRemoveForm(index);
+          console.log('clicked');
         }}
       >
         X
@@ -164,26 +155,8 @@ const RoyalBrocadeForm = ({
           onChange(e, index);
         }}
       />
-      <input
-        type='text'
-        placeholder='Three Four Sleeve'
-        name='threeFourSleeve'
-        value={threeFourSleeve}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Three Four Round Sleeve'
-        name='threeFourRoundSleeve'
-        value={threeFourRoundSleeve}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
     </div>
   );
 };
 
-export default RoyalBrocadeForm;
+export default ShirtForm;

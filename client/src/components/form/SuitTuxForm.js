@@ -1,11 +1,6 @@
 import React from 'react';
 
-const RoyalBrocadeForm = ({
-  index,
-  royalBrocadeTopArr,
-  setRoyalBrocadeTopArr,
-}) => {
-  // Destructure data from the current index
+const SuitTuxForm = ({ index, suitTuxArr, setSuitTuxArr }) => {
   const {
     name,
     back,
@@ -13,17 +8,14 @@ const RoyalBrocadeForm = ({
     length,
     roundSleeve,
     sleeveLength,
-    shortSleeveLength,
     stomach,
-    neck,
     cuffWrist,
-    threeFourSleeve,
-    threeFourRoundSleeve,
-  } = royalBrocadeTopArr[index];
+    lapel,
+  } = suitTuxArr[index];
 
   // CHANGE INPUT VALUE
   const onChange = (e, i) => {
-    const values = [...royalBrocadeTopArr];
+    const values = [...suitTuxArr];
 
     if (e.target.name === 'name') {
       values[i].name = e.target.value;
@@ -37,30 +29,24 @@ const RoyalBrocadeForm = ({
       values[i].roundSleeve = e.target.value;
     } else if (e.target.name === 'sleeveLength') {
       values[i].sleeveLength = e.target.value;
-    } else if (e.target.name === 'shortSleeveLength') {
-      values[i].shortSleeveLength = e.target.value;
     } else if (e.target.name === 'stomach') {
       values[i].stomach = e.target.value;
-    } else if (e.target.name === 'neck') {
-      values[i].neck = e.target.value;
     } else if (e.target.name === 'cuffWrist') {
       values[i].cuffWrist = e.target.value;
-    } else if (e.target.name === 'threeFourSleeve') {
-      values[i].threeFourSleeve = e.target.value;
-    } else if (e.target.name === 'threeFourRoundSleeve') {
-      values[i].threeFourRoundSleeve = e.target.value;
+    } else if (e.target.name === 'lapel') {
+      values[i].lapel = e.target.value;
     }
 
-    setRoyalBrocadeTopArr(values);
+    setSuitTuxArr(values);
   };
 
   // REMOVE SINGLE FORM
   const onRemoveForm = (formIndex) => {
-    const newArr = royalBrocadeTopArr.filter(
-      (RBT) => royalBrocadeTopArr.indexOf(RBT) !== formIndex
+    const newArr = suitTuxArr.filter(
+      (suitTux) => suitTuxArr.indexOf(suitTux) !== formIndex
     );
 
-    setRoyalBrocadeTopArr(newArr);
+    setSuitTuxArr(newArr);
   };
 
   return (
@@ -69,6 +55,7 @@ const RoyalBrocadeForm = ({
       <div
         onClick={() => {
           onRemoveForm(index);
+          console.log('clicked');
         }}
       >
         X
@@ -130,27 +117,9 @@ const RoyalBrocadeForm = ({
       />
       <input
         type='text'
-        placeholder='Short Sleeve Length'
-        name='shortSleeveLength'
-        value={shortSleeveLength}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
         placeholder='Stomach'
         name='stomach'
         value={stomach}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Neck'
-        name='neck'
-        value={neck}
         onChange={(e) => {
           onChange(e, index);
         }}
@@ -166,18 +135,9 @@ const RoyalBrocadeForm = ({
       />
       <input
         type='text'
-        placeholder='Three Four Sleeve'
-        name='threeFourSleeve'
-        value={threeFourSleeve}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Three Four Round Sleeve'
-        name='threeFourRoundSleeve'
-        value={threeFourRoundSleeve}
+        placeholder='lapel'
+        name='lapel'
+        value={lapel}
         onChange={(e) => {
           onChange(e, index);
         }}
@@ -186,4 +146,4 @@ const RoyalBrocadeForm = ({
   );
 };
 
-export default RoyalBrocadeForm;
+export default SuitTuxForm;
