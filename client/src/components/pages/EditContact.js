@@ -2,22 +2,23 @@ import React, { useContext } from 'react';
 import ContactForm from '../contacts/ContactForm';
 import ContactContext from '../../context/contact/contactContext';
 
-const CreateContact = (props) => {
+const EditContact = (props) => {
   const contactContext = useContext(ContactContext);
-  const { addContact } = contactContext;
+  const { editContact } = contactContext;
 
   const onSubmit = (contact) => {
     console.log(contact);
-    // Add formData to contact context
-    addContact(contact);
-    props.history.push('/');
+    // Edit contact in contact context
+    // editContact(contact);
+    // props.history.push('/');
   };
+
   return (
     <div>
-      <h1>Add Contact</h1>
+      <h1>Edit Contact</h1>
       <ContactForm props={props} onSubmit={onSubmit} />
     </div>
   );
 };
 
-export default CreateContact;
+export default EditContact;

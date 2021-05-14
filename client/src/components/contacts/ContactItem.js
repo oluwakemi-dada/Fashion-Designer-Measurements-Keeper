@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import ContactContext from '../../context/contact/contactContext';
 
 const ContactItem = ({ contact }) => {
+  const contactContext = useContext(ContactContext);
+  const { setCurrent } = contactContext;
+
   const { id, name, email, phone } = contact;
 
   return (
@@ -19,7 +24,7 @@ const ContactItem = ({ contact }) => {
         </li>
       </ul>
       <p>
-        <button className='btn btn-primary'>VIEW CONTACT</button>
+        <Link to={`/contacts/${id}`}>View Contact</Link>
       </p>
     </div>
   );

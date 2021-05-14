@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { v4 as uuid } from 'uuid';
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
 import TrouserForm from '../form/TrouserForm';
@@ -8,8 +9,12 @@ import SuitTuxForm from '../form/SuitTuxForm';
 import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
+import ContactContext from '../../context/contact/contactContext';
 
-const ContactForm = () => {
+const ContactForm = ({ props, onSubmit }) => {
+  const contactContext = useContext(ContactContext);
+  const { addContact } = contactContext;
+
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: '',
@@ -49,6 +54,7 @@ const ContactForm = () => {
     setRoyalBrocadeTopArr([
       ...royalBrocadeTopArr,
       {
+        id: uuid(),
         name: '',
         back: '',
         chest: '',
@@ -70,6 +76,7 @@ const ContactForm = () => {
     setTrouserArr([
       ...trouserArr,
       {
+        id: uuid(),
         name: '',
         waist: '',
         lap: '',
@@ -88,6 +95,7 @@ const ContactForm = () => {
     setAgbadaArr([
       ...agbadaArr,
       {
+        id: uuid(),
         name: '',
         sleeve: '',
         length: '',
@@ -100,6 +108,7 @@ const ContactForm = () => {
     setCapArr([
       ...capArr,
       {
+        id: uuid(),
         name: '',
         cap: '',
       },
@@ -111,6 +120,7 @@ const ContactForm = () => {
     setSuitTuxArr([
       ...suitTuxArr,
       {
+        id: uuid(),
         name: '',
         back: '',
         chest: '',
@@ -129,6 +139,7 @@ const ContactForm = () => {
     setWaistCoatArr([
       ...waistCoatArr,
       {
+        id: uuid(),
         name: '',
         chest: '',
         stomach: '',
@@ -142,6 +153,7 @@ const ContactForm = () => {
     setShirtArr([
       ...shirtArr,
       {
+        id: uuid(),
         name: '',
         back: '',
         chest: '',
@@ -161,6 +173,7 @@ const ContactForm = () => {
     setFemaleMeasurementArr([
       ...femaleMeasurementArr,
       {
+        id: uuid(),
         name: '',
         shoulder: '',
         bust: '',
@@ -183,8 +196,9 @@ const ContactForm = () => {
   };
 
   // FORM SUBMIT
-  const onSubmit = (e) => {
+  const onSubmitForm = (e) => {
     e.preventDefault();
+    // Form Data
     const formData = {
       name: generalData.name,
       phone: generalData.phone,
@@ -192,17 +206,18 @@ const ContactForm = () => {
       address: generalData.address,
       dob: generalData.dob,
       anniversary: generalData.anniversary,
-      royalBrocadeTop: royalBrocadeTopArr,
-      trouser: trouserArr,
-      agbada: agbadaArr,
-      cap: capArr,
-      suitTux: suitTuxArr,
-      waistCoat: waistCoatArr,
-      shirt: shirtArr,
-      femaleMeasurement: femaleMeasurementArr,
+      royalBrocadeTops: royalBrocadeTopArr,
+      trousers: trouserArr,
+      agbadas: agbadaArr,
+      caps: capArr,
+      suitTuxes: suitTuxArr,
+      waistCoats: waistCoatArr,
+      shirts: shirtArr,
+      femaleMeasurements: femaleMeasurementArr,
     };
-    console.log(formData);
-    // Add to contact context
+
+    // Call function that adds formData to contact context
+    onSubmit(formData);
   };
 
   return (
@@ -218,9 +233,7 @@ const ContactForm = () => {
         <button onClick={addFemaleMeasurementForm}>Female Measurement</button>
       </div>
 
-      <form onSubmit={onSubmit}>
-        <h1>Add Contact</h1>
-
+      <form onSubmit={onSubmitForm}>
         {/* GENERAL FORM */}
         <GeneralForm
           generalData={generalData}
