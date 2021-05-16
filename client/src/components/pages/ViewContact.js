@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import ContactContext from '../../context/contact/contactContext';
 import General from '../views/General';
 import RoyalBrocadeTopList from '../views/royalBrocadeTop/RoyalBrocadeTopList';
@@ -20,7 +21,6 @@ const ViewContact = (props) => {
 
   return (
     <div>
-      {/* console.log(contact) */}
       <h1>Contact Info</h1>
       <General contact={contact} />
       <RoyalBrocadeTopList contact={contact} />
@@ -32,8 +32,7 @@ const ViewContact = (props) => {
       <ShirtList contact={contact} />
       <FMeasurementList contact={contact} />
       <div>
-        <button>EDIT CONTACT</button>
-        <button>DELETE CONTACT</button>
+        <Link to={`/edit/${contact.id}`}>View Contact</Link>
       </div>
     </div>
   );

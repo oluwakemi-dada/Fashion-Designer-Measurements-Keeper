@@ -23,9 +23,9 @@ const ContactItem = ({ contact }) => {
           <i className='fas fa-phone' /> {phone}
         </li>
       </ul>
-      <p>
+      <div>
         <Link to={`/contacts/${id}`}>View Contact</Link>
-      </p>
+      </div>
     </div>
   );
 };

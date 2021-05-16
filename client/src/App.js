@@ -20,7 +20,7 @@ const App = () => {
               <Route exact path='/' component={Home} />
               <Route exact path='/create' component={CreateContact} />
               <Route exact path='/contacts/:id' component={ViewContact} />
-              {/* <Route exact path="/edit/:id" component={EditContact} /> 
+              <Route exact path='/edit/:id' component={EditContact} />
               {/*<Route component={NotFoundPage} /> */}
             </Switch>
           </div>

@@ -1,8 +1,6 @@
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
-  SET_CURRENT,
-  CLEAR_CURRENT,
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
@@ -16,16 +14,20 @@ const contactReducer = (state, action) => {
         contacts: [...state.contacts, action.payload],
       };
 
-    case SET_CURRENT:
+    case DELETE_CONTACT:
       return {
         ...state,
-        current: action.payload,
+        contacts: state.contacts.filter(
+          (contact) => contact.id !== action.payload
+        ),
       };
 
-    case CLEAR_CURRENT:
+    case UPDATE_CONTACT:
       return {
         ...state,
-        current: null,
+        contacts: state.contacts.map((contact) =>
+          contact.id === action.payload.id ? action.payload : contact
+        ),
       };
 
     default:

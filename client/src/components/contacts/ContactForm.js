@@ -9,45 +9,61 @@ import SuitTuxForm from '../form/SuitTuxForm';
 import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
-import ContactContext from '../../context/contact/contactContext';
+// import ContactContext from '../../context/contact/contactContext';
 
-const ContactForm = ({ props, onSubmit }) => {
-  const contactContext = useContext(ContactContext);
-  const { addContact } = contactContext;
+const ContactForm = ({ props, onSubmit, contact }) => {
+  // const contactContext = useContext(ContactContext);
+  // const { deleteContact } = contactContext;
 
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    dob: '',
-    anniversary: '',
+    name: contact ? contact.name : '',
+    phone: contact ? contact.phone : '',
+    email: contact ? contact.email : '',
+    address: contact ? contact.address : '',
+    dob: contact ? contact.dob : '',
+    anniversary: contact ? contact.anniversary : '',
   });
 
   // ROYAL BROCADE TOP DATA
-  const [royalBrocadeTopArr, setRoyalBrocadeTopArr] = useState([]);
+  const [royalBrocadeTopArr, setRoyalBrocadeTopArr] = useState(
+    contact && contact.royalBrocadeTops ? [...contact.royalBrocadeTops] : []
+  );
 
   // TROUSER DATA
-  const [trouserArr, setTrouserArr] = useState([]);
+  const [trouserArr, setTrouserArr] = useState(
+    contact && contact.trousers ? [...contact.trousers] : []
+  );
 
   // AGBADA DATA
-  const [agbadaArr, setAgbadaArr] = useState([]);
+  const [agbadaArr, setAgbadaArr] = useState(
+    contact && contact.agbadas ? [...contact.agbadas] : []
+  );
 
   // CAP DATA
-  const [capArr, setCapArr] = useState([]);
+  const [capArr, setCapArr] = useState(
+    contact && contact.caps ? [...contact.caps] : []
+  );
 
   // SUIT TUX DATA
-  const [suitTuxArr, setSuitTuxArr] = useState([]);
+  const [suitTuxArr, setSuitTuxArr] = useState(
+    contact && contact.suitTuxes ? [...contact.suitTuxes] : []
+  );
 
   // WAIST COAT DATA
-  const [waistCoatArr, setWaistCoatArr] = useState([]);
+  const [waistCoatArr, setWaistCoatArr] = useState(
+    contact && contact.waistCoats ? [...contact.waistCoats] : []
+  );
 
   // SHIRT DATA
-  const [shirtArr, setShirtArr] = useState([]);
+  const [shirtArr, setShirtArr] = useState(
+    contact && contact.shirts ? [...contact.shirts] : []
+  );
 
   // FEMALE MEASUREMENT DATA
-  const [femaleMeasurementArr, setFemaleMeasurementArr] = useState([]);
+  const [femaleMeasurementArr, setFemaleMeasurementArr] = useState(
+    contact && contact.femaleMeasurements ? [...contact.femaleMeasurements] : []
+  );
 
   // ADD ROYAL BROCADE FORM
   const addRoyalBrocadeTopForm = () => {
@@ -337,7 +353,7 @@ const ContactForm = ({ props, onSubmit }) => {
           ))}
 
         <button type='submit' onSubmit={onSubmit}>
-          ADD CONTACT
+          {contact ? 'EDIT  CONTACT' : 'ADD CONTACT'}
         </button>
       </form>
     </div>
