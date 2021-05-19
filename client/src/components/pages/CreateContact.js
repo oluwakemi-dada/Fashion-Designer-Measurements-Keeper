@@ -9,8 +9,10 @@ const CreateContact = (props) => {
   const onSubmit = (contact) => {
     console.log(contact);
     // Add formData to contact context
-    addContact(contact);
-    props.history.push('/');
+    if (contact.name !== '' && contact.phone !== '') {
+      addContact(contact);
+      props.history.push('/');
+    }
   };
   return (
     <div>

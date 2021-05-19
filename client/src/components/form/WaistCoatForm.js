@@ -46,6 +46,7 @@ const WaistCoatForm = ({ index, waistCoatArr, setWaistCoatArr }) => {
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}

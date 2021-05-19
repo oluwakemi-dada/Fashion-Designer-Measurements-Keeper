@@ -15,11 +15,14 @@ const EditContact = (props) => {
     contact.id = props.match.params.id;
     console.log(contact);
     // Edit contact in contact context
-    editContact(contact);
-    props.history.push('/');
+    if (contact.name !== '' && contact.phone !== '') {
+      editContact(contact);
+      props.history.push('/');
+    }
   };
 
   const onDeleteContact = () => {
+    // !!!!!!!!! Add confirmation !!!!!!!!!!!!!!
     deleteContact(props.match.params.id);
     props.history.push('/');
   };

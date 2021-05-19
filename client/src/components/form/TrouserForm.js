@@ -1,17 +1,8 @@
 import React from 'react';
 
 const TrouserForm = ({ index, trouserArr, setTrouserArr }) => {
-  const {
-    name,
-    waist,
-    lap,
-    length,
-    knee,
-    flap,
-    hip,
-    lowerLimb,
-    mouthAnkle,
-  } = trouserArr[index];
+  const { name, waist, lap, length, knee, flap, hip, lowerLimb, mouthAnkle } =
+    trouserArr[index];
 
   // CHANGE INPUT VALUE
   const onChange = (e, i) => {
@@ -66,6 +57,7 @@ const TrouserForm = ({ index, trouserArr, setTrouserArr }) => {
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}

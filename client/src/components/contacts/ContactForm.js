@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
@@ -9,12 +9,8 @@ import SuitTuxForm from '../form/SuitTuxForm';
 import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
-// import ContactContext from '../../context/contact/contactContext';
 
 const ContactForm = ({ props, onSubmit, contact }) => {
-  // const contactContext = useContext(ContactContext);
-  // const { deleteContact } = contactContext;
-
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',

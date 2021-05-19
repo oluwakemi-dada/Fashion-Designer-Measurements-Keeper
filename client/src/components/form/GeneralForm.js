@@ -18,6 +18,7 @@ const GeneralForm = ({ generalData, setGeneralData }) => {
         name='name'
         value={name}
         onChange={onChange}
+        required
       />
       <input
         type='text'
@@ -25,6 +26,7 @@ const GeneralForm = ({ generalData, setGeneralData }) => {
         name='phone'
         value={phone}
         onChange={onChange}
+        required
       />
       <input
         type='email'

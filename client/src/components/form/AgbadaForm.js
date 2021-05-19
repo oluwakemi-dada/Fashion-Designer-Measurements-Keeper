@@ -44,6 +44,7 @@ const AgbadaForm = ({ index, agbadaArr, setAgbadaArr }) => {
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}

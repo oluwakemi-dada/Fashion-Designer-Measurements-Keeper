@@ -79,6 +79,7 @@ const RoyalBrocadeForm = ({
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}

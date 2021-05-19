@@ -70,6 +70,7 @@ const ShirtForm = ({ index, shirtArr, setShirtArr }) => {
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}

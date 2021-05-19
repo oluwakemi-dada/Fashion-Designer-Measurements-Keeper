@@ -96,6 +96,7 @@ const FemaleMeasurementForm = ({
         placeholder='Name'
         name='name'
         value={name}
+        required
         onChange={(e) => {
           onChange(e, index);
         }}
