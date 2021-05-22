@@ -1,6 +1,19 @@
 import React, { useContext, useRef, useEffect } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import ContactContext from '../../context/contact/contactContext';
+
+const Form = styled.form`
+  width: 30%;
+  margin-bottom: 2rem;
+`;
+
+const FilterInput = styled.input`
+  padding: 0.7rem 1rem;
+  width: 100%;
+  border: 1px solid #333;
+  outline: none;
+  background: #f9f9f9;
+`;
 
 const ContactsFilter = () => {
   const contactContext = useContext(ContactContext);
@@ -22,14 +35,14 @@ const ContactsFilter = () => {
   };
 
   return (
-    <form>
-      <input
+    <Form>
+      <FilterInput
         ref={text}
         type='text'
         placeholder='Filter Contacts...'
         onChange={onChangeFilter}
       />
-    </form>
+    </Form>
   );
 };
 
