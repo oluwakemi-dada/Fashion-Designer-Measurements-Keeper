@@ -1,4 +1,5 @@
 import React, { useContext, useRef, useEffect } from 'react';
+import styled from 'styled-components'
 import ContactContext from '../../context/contact/contactContext';
 
 const ContactsFilter = () => {

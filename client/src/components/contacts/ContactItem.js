@@ -1,32 +1,82 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ContactContext from '../../context/contact/contactContext';
+
+const Card = styled.div`
+  background: #f6f6f6;
+  box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.25);
+  margin: 1rem 0;
+  padding: 3rem;
+  width: 50%; /*Subject to change */
+
+  @media (max-width: 700px) {
+    padding: 2rem;
+    margin: 1rem 0;
+    width: 90%;
+  }
+`;
+
+const ContactName = styled.h3`
+  margin-bottom: 2rem;
+`;
+
+const ListItem = styled.li`
+  margin-bottom: 2rem;
+
+  @media (max-width: 700px) {
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const ListItemIcon = styled.i`
+  margin-right: 1.4rem;
+  font-size: 1.8rem;
+
+  @media (max-width: 700px) {
+    margin-right: 0.7rem;
+    font-size: 1.6rem;
+  }
+`;
+
+const Button = styled.div`
+  display: inline-block;
+  background: #0078e7;
+  padding: 1rem 1.3rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    background: #0370d6;
+  }
+`;
 
 const ContactItem = ({ contact }) => {
-  const contactContext = useContext(ContactContext);
-  const { setCurrent } = contactContext;
-
   const { id, name, email, phone } = contact;
 
   return (
-    <div className='card bg-light-2'>
-      <h3>{name}</h3>
+    <Card>
+      <ContactName>{name}</ContactName>
       <ul>
         {email && (
-          <li>
-            <i className='fas fa-envelope-open' />
+          <ListItem>
+            <ListItemIcon className='fas fa-envelope-open' />
             {email}
-          </li>
+          </ListItem>
         )}
-        <li>
-          <i className='fas fa-phone' /> {phone}
-        </li>
+        <ListItem>
+          <ListItemIcon className='fas fa-phone' /> {phone}
+        </ListItem>
       </ul>
-      <div>
-        <Link to={`/contacts/${id}`}>View Contact</Link>
-      </div>
-    </div>
+      <Button>
+        <Link to={`/contacts/${id}`} style={{ color: '#fff' }}>
+          View Contact
+        </Link>
+      </Button>
+    </Card>
   );
 };
 
