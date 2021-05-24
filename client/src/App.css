@@ -28,6 +28,7 @@ body {
   line-height: 1.6;
   background-color: var(--color-white);
   color: var(--dark-color);
+  /* color: #999898; */
 }
 
 ul {

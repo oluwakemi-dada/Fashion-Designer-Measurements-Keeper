@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
@@ -10,7 +11,30 @@ import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
 
-const ContactForm = ({ props, onSubmit, contact }) => {
+const ButtonsWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 5rem;
+`;
+const Button = styled.div`
+  background: #f4f4f4;
+  box-shadow: 0.05rem 0.05rem 0.3rem #999;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background: #f9f9f9;
+  }
+`;
+
+const Title = styled.h3`
+  background: #f1f1f1;
+  padding: 0.8rem 2rem;
+  margin-bottom: 3rem;
+`;
+
+const ContactForm = ({ onSubmit, contact }) => {
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',
@@ -234,26 +258,27 @@ const ContactForm = ({ props, onSubmit, contact }) => {
 
   return (
     <div>
-      <div>
-        <button onClick={addRoyalBrocadeTopForm}>Royal Brocade Top</button>
-        <button onClick={addTrouserForm}>Trouser</button>
-        <button onClick={addAgbadaForm}>Agbada</button>
-        <button onClick={addCapForm}>Cap</button>
-        <button onClick={addSuitTuxForm}>Suit Tux</button>
-        <button onClick={addWaistCoatForm}>Waist Coat</button>
-        <button onClick={addShirtForm}>Shirt</button>
-        <button onClick={addFemaleMeasurementForm}>Female Measurement</button>
-      </div>
+      <ButtonsWrapper>
+        <Button onClick={addRoyalBrocadeTopForm}>Royal Brocade Top</Button>
+        <Button onClick={addTrouserForm}>Trouser</Button>
+        <Button onClick={addAgbadaForm}>Agbada</Button>
+        <Button onClick={addCapForm}>Cap</Button>
+        <Button onClick={addSuitTuxForm}>Suit Tux</Button>
+        <Button onClick={addWaistCoatForm}>Waist Coat</Button>
+        <Button onClick={addShirtForm}>Shirt</Button>
+        <Button onClick={addFemaleMeasurementForm}>Female Measurement</Button>
+      </ButtonsWrapper>
 
       <form onSubmit={onSubmitForm}>
         {/* GENERAL FORM */}
+        <Title>General Form</Title>
         <GeneralForm
           generalData={generalData}
           setGeneralData={setGeneralData}
         />
 
         {/* ROYAL BROCADE TOP FORM */}
-        {royalBrocadeTopArr.length !== 0 && <h2>Royal Brocade Top</h2>}
+        {royalBrocadeTopArr.length !== 0 && <Title>Royal Brocade Top</Title>}
         {royalBrocadeTopArr.length !== 0 &&
           royalBrocadeTopArr.map((top, index) => (
             <RoyalBrocadeForm
@@ -265,7 +290,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* TROUSER FORM */}
-        {trouserArr.length !== 0 && <h2>Trouser</h2>}
+        {trouserArr.length !== 0 && <Title>Trouser</Title>}
         {trouserArr.length !== 0 &&
           trouserArr.map((trouser, index) => (
             <TrouserForm
@@ -277,7 +302,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* AGBADA FORM */}
-        {agbadaArr.length !== 0 && <h2>Agbada</h2>}
+        {agbadaArr.length !== 0 && <Title>Agbada</Title>}
         {agbadaArr.length !== 0 &&
           agbadaArr.map((agbada, index) => (
             <AgbadaForm
@@ -289,7 +314,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* CAP FORM */}
-        {capArr.length !== 0 && <h2>Cap</h2>}
+        {capArr.length !== 0 && <Title>Cap</Title>}
         {capArr.length !== 0 &&
           capArr.map((cap, index) => (
             <CapForm
@@ -301,7 +326,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* SUIT TUX FORM */}
-        {suitTuxArr.length !== 0 && <h2>Suit Tux</h2>}
+        {suitTuxArr.length !== 0 && <Title>Suit Tux</Title>}
         {suitTuxArr.length !== 0 &&
           suitTuxArr.map((suitTux, index) => (
             <SuitTuxForm
@@ -313,7 +338,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* WAIST COAT FORM */}
-        {waistCoatArr.length !== 0 && <h2>Waist Coat</h2>}
+        {waistCoatArr.length !== 0 && <Title>Waist Coat</Title>}
         {waistCoatArr.length !== 0 &&
           waistCoatArr.map((waistCoat, index) => (
             <WaistCoatForm
@@ -325,7 +350,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* SHIRT FORM */}
-        {shirtArr.length !== 0 && <h2>Shirt</h2>}
+        {shirtArr.length !== 0 && <Title>Shirt</Title>}
         {shirtArr.length !== 0 &&
           shirtArr.map((shirt, index) => (
             <ShirtForm
@@ -337,7 +362,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         {/* FEMALE MEASUREMENT FORM */}
-        {femaleMeasurementArr.length !== 0 && <h2>Female Measurement</h2>}
+        {femaleMeasurementArr.length !== 0 && <Title>Female Measurement</Title>}
         {femaleMeasurementArr.length !== 0 &&
           femaleMeasurementArr.map((female, index) => (
             <FemaleMeasurementForm

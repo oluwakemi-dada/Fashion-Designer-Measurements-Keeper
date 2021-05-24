@@ -1,6 +1,16 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import ContactForm from '../contacts/ContactForm';
 import ContactContext from '../../context/contact/contactContext';
+
+const Wrapper = styled.div`
+  padding: 1rem 10%;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 3rem;
+`;
 
 const CreateContact = (props) => {
   const contactContext = useContext(ContactContext);
@@ -15,10 +25,10 @@ const CreateContact = (props) => {
     }
   };
   return (
-    <div>
-      <h1>Add Contact</h1>
+    <Wrapper>
+      <Title>Add Contact</Title>
       <ContactForm props={props} onSubmit={onSubmit} />
-    </div>
+    </Wrapper>
   );
 };
 
