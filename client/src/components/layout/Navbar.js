@@ -11,7 +11,7 @@ const NavbarMenu = styled.div`
   justify-content: space-between;
   padding: 0.7rem 2rem;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const Logo = styled.h1`

@@ -349,7 +349,7 @@ const ContactForm = ({ props, onSubmit, contact }) => {
           ))}
 
         <button type='submit' onSubmit={onSubmit}>
-          {contact ? 'EDIT  CONTACT' : 'ADD CONTACT'}
+          {contact ? 'UPDATE  CONTACT' : 'ADD CONTACT'}
         </button>
       </form>
     </div>

@@ -1,13 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
 import FMeasurementListItem from './FMeasurementListItem';
+
+const Wrapper = styled.div`
+  margin-bottom: 6rem;
+`;
+
+const Title = styled.h3`
+  background: #f1f1f1;
+  padding: 0.8rem 2rem;
+  margin-bottom: 3rem;
+`;
 
 const FMeasurementList = ({ contact }) => {
   const { femaleMeasurements } = contact;
 
   return (
-    <div>
+    <Wrapper>
       {femaleMeasurements && femaleMeasurements.length !== 0 && (
-        <h3>Female Measurements</h3>
+        <Title>Female Measurements</Title>
       )}
       {femaleMeasurements &&
         femaleMeasurements.length !== 0 &&
@@ -17,7 +28,7 @@ const FMeasurementList = ({ contact }) => {
             femaleMeasurement={femaleMeasurement}
           />
         ))}
-    </div>
+    </Wrapper>
   );
 };
 

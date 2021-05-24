@@ -68,6 +68,24 @@ const ContactState = (props) => {
         address: 'Maitama, Abuja, Nigeria',
         dob: '10/9/97',
         anniversary: '12th May',
+        agbadas: [
+          {
+            name: 'Mr Oyeleke',
+            sleeve: '13',
+            length: '40',
+          },
+          {
+            name: 'Mrs Oyeleke',
+            sleeve: '10',
+            length: '35',
+          },
+        ],
+        caps: [
+          {
+            name: 'Mr Oyeleke',
+            cap: '26',
+          },
+        ],
       },
     ],
     filtered: null,

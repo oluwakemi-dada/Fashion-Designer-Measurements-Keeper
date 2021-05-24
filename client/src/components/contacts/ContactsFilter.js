@@ -10,9 +10,11 @@ const Form = styled.form`
 const FilterInput = styled.input`
   padding: 0.7rem 1rem;
   width: 100%;
-  border: 1px solid #333;
+  /* border: 1px solid #444; */
+  border: none;
   outline: none;
   background: #f9f9f9;
+  box-shadow: 0 0 0.2rem #666;
 `;
 
 const ContactsFilter = () => {
