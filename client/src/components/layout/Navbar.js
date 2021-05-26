@@ -19,6 +19,10 @@ const Logo = styled.h1`
   font-weight: 700;
   font-size: 3rem;
   font-family: 'Luckiest Guy', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const List = styled.ul`
