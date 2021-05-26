@@ -8,13 +8,13 @@ const Card = styled.div`
   box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.25);
   margin: 1rem 0;
   padding: 3rem;
-  width: 50%; 
+  width: 50%;
 
   @media (max-width: 1024px) {
     width: 65%;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 768px) {
     width: 70%;
   }
 

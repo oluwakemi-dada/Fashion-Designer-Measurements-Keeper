@@ -5,12 +5,31 @@ import ContactContext from '../../context/contact/contactContext';
 const Form = styled.form`
   width: 30%;
   margin-bottom: 2rem;
+
+  @media (max-width: 1024px) {
+    width: 40%;
+  }
+
+  @media (max-width: 768px) {
+    width: 45%;
+  }
+
+  @media (max-width: 550px) {
+    width: 55%;
+  }
+
+  @media (max-width: 450px) {
+    width: 60%;
+  }
+
+  @media (max-width: 360px) {
+    width: 70%;
+  }
 `;
 
 const FilterInput = styled.input`
   padding: 0.7rem 1rem;
   width: 100%;
-  /* border: 1px solid #444; */
   border: none;
   outline: none;
   background: #f9f9f9;
