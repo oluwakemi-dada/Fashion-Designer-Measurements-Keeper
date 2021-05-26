@@ -8,12 +8,28 @@ const Card = styled.div`
   box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.25);
   margin: 1rem 0;
   padding: 3rem;
-  width: 50%; /*Subject to change */
+  width: 50%; 
+
+  @media (max-width: 1024px) {
+    width: 65%;
+  }
+
+  @media (max-width: 1024px) {
+    width: 70%;
+  }
 
   @media (max-width: 700px) {
     padding: 2rem;
     margin: 1rem 0;
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
     width: 90%;
+  }
+
+  @media (max-width: 360px) {
+    width: 95%;
   }
 `;
 
