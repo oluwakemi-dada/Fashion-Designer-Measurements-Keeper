@@ -18,6 +18,7 @@ const Logo = styled.h1`
   margin: 0.3rem 0;
   font-weight: 700;
   font-size: 3rem;
+  font-family: 'Luckiest Guy', cursive;
 `;
 
 const List = styled.ul`
@@ -55,7 +56,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  title: 'VISION',
+  title: 'LOGO',
 };
 
 export default Navbar;
