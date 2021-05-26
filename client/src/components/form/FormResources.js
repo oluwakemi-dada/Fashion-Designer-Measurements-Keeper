@@ -50,16 +50,8 @@ export const Label = styled.label`
 export const Input = styled.input`
   background: #f9f9f9;
   width: 100%;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 1.5rem;
   border: none;
-
-  @media (max-width: 600px) {
-    width: 80%;
-  }
-
-  @media (max-width: 550px) {
-    width: 70%;
-  }
 `;
 
 export const styles = {
