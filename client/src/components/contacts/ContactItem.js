@@ -25,11 +25,8 @@ const Card = styled.div`
   }
 
   @media (max-width: 450px) {
-    width: 90%;
-  }
-
-  @media (max-width: 360px) {
-    width: 95%;
+    width: 100%;
+    padding: 2rem;
   }
 `;
 

@@ -70,11 +70,13 @@ const ContactState = (props) => {
         anniversary: '12th May',
         agbadas: [
           {
+            id: uuid(),
             name: 'Mr Oyeleke',
             sleeve: '13',
             length: '40',
           },
           {
+            id: uuid(),
             name: 'Mrs Oyeleke',
             sleeve: '10',
             length: '35',
@@ -82,6 +84,7 @@ const ContactState = (props) => {
         ],
         caps: [
           {
+            id: uuid(),
             name: 'Mr Oyeleke',
             cap: '26',
           },
