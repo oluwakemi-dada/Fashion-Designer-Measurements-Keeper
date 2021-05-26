@@ -2,14 +2,8 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #0078e7;
   --color-white: #fff;
-  --light-color-1: #f9f9f9;
-  --light-color-2: #f6f6f6;
   --dark-color: #333;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
-  /* #229b3e */
 }
 
 html {
@@ -40,7 +34,7 @@ a {
 
 /* Navigation */
 .navlink {
-  color: #fff;
+  color: var(--color-white);
   padding: 0.5rem;
   margin: 0 0.5rem;
   font-weight: 500;

@@ -23,6 +23,10 @@ const AddFormButton = styled.div`
   padding: 2rem 1rem;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   &:hover {
     background: #f9f9f9;
     font-weight: 500;
