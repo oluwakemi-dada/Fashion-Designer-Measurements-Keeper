@@ -1,27 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const ListItemWrapper = styled.div`
-  margin-bottom: 3rem;
-`;
-
-const Field = styled.p`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1.5rem;
-`;
-
-const Parameter = styled.span`
-  background: #f1f1f1;
-  width: 40%;
-  padding: 0.5rem 1.5rem;
-`;
-
-const Value = styled.span`
-  background: #f9f9f9;
-  width: 100%;
-  padding: 0.5rem 3rem;
-`;
+import { ListItemWrapper, Field, Parameter, Value } from '../ViewsResources';
 
 const ShirtListItem = ({ shirt }) => {
   const {
@@ -65,19 +43,19 @@ const ShirtListItem = ({ shirt }) => {
       )}
       {roundSleeve && (
         <Field>
-          <Parameter>RoundSleeve</Parameter>
+          <Parameter>Round Sleeve</Parameter>
           <Value>{roundSleeve}</Value>
         </Field>
       )}
       {sleeveLength && (
         <Field>
-          <Parameter>SleeveLength</Parameter>
+          <Parameter>Sleeve Length</Parameter>
           <Value>{sleeveLength}</Value>
         </Field>
       )}
       {shortSleeveLength && (
         <Field>
-          <Parameter>ShortSleeveLength</Parameter>
+          <Parameter>Short Sleeve Length</Parameter>
           <Value>{shortSleeveLength}</Value>
         </Field>
       )}
@@ -95,7 +73,7 @@ const ShirtListItem = ({ shirt }) => {
       )}
       {cuffWrist && (
         <Field>
-          <Parameter>CuffWrist</Parameter>
+          <Parameter>Cuff Wrist</Parameter>
           <Value>{cuffWrist}</Value>
         </Field>
       )}

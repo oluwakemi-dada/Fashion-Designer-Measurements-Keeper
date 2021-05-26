@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ContactContext from '../../context/contact/contactContext';
-import General from '../views/General';
+import General from '../views/general/General';
 import RoyalBrocadeTopList from '../views/royalBrocadeTop/RoyalBrocadeTopList';
 import TrouserList from '../views/trouser/TrouserList';
 import AgbadaList from '../views/agbada/AgbadaList';
@@ -24,9 +24,14 @@ const Title = styled.h1`
 const Button = styled.div`
   display: inline-block;
   background: #0078e7;
-  padding: 1rem 1.3rem;
+  height: 4rem;
+  width: 11rem;
   font-size: 1.3rem;
   font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -35,6 +40,17 @@ const Button = styled.div`
     background: #0370d6;
   }
 `;
+
+const styles = {
+  link: {
+    color: '#fff',
+    height: '4rem',
+    width: '11rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+};
 
 const ViewContact = (props) => {
   const contactContext = useContext(ContactContext);
@@ -57,7 +73,7 @@ const ViewContact = (props) => {
       <ShirtList contact={contact} />
       <FMeasurementList contact={contact} />
       <Button>
-        <Link to={`/edit/${contact.id}`} style={{ color: '#fff' }}>
+        <Link to={`/edit/${contact.id}`} style={styles.link}>
           Edit Contact
         </Link>
       </Button>

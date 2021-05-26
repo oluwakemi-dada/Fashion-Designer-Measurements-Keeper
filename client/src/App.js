@@ -13,7 +13,7 @@ import './App.css';
 const Container = styled.div`
   margin: auto;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 1.5rem 2rem 4rem 2rem;
 `;
 
 const App = () => {

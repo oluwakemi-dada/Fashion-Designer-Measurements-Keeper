@@ -1,6 +1,16 @@
 import React, { useContext } from 'react';
+import styled from 'styled-components';
 import ContactForm from '../contacts/ContactForm';
 import ContactContext from '../../context/contact/contactContext';
+
+const Wrapper = styled.div`
+  padding: 1rem 10%;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 3rem;
+`;
 
 const EditContact = (props) => {
   const contactContext = useContext(ContactContext);
@@ -28,11 +38,15 @@ const EditContact = (props) => {
   };
 
   return (
-    <div>
-      <h1>Edit Contact</h1>
-      <ContactForm props={props} onSubmit={onSubmit} contact={contactToEdit} />
-      <button onClick={onDeleteContact}>DELETE CONTACT</button>
-    </div>
+    <Wrapper>
+      <Title>Edit Contact</Title>
+      <ContactForm
+        props={props}
+        onSubmit={onSubmit}
+        contact={contactToEdit}
+        onDeleteContact={onDeleteContact}
+      />
+    </Wrapper>
   );
 };
 

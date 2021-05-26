@@ -11,13 +11,13 @@ import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
 
-const ButtonsWrapper = styled.div`
+const AddFormButtonsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   margin-bottom: 5rem;
 `;
-const Button = styled.div`
+const AddFormButton = styled.div`
   background: #f4f4f4;
   box-shadow: 0.05rem 0.05rem 0.3rem #999;
   padding: 2rem 1rem;
@@ -25,16 +25,63 @@ const Button = styled.div`
   cursor: pointer;
   &:hover {
     background: #f9f9f9;
+    font-weight: 500;
   }
 `;
 
 const Title = styled.h3`
-  background: #f1f1f1;
+  background: #e7e4e4;
   padding: 0.8rem 2rem;
   margin-bottom: 3rem;
 `;
 
-const ContactForm = ({ onSubmit, contact }) => {
+const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ButtonAdd = styled.button`
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  height: 4rem;
+  width: 15rem;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    background: #229b3e;
+  }
+`;
+
+const ButtonDelete = styled.div`
+  display: inline-block;
+  background: #dc3545;
+  color: #fff;
+  height: 4rem;
+  width: 15rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  &:hover {
+    background: #ce2e3e;
+  }
+`;
+
+const ContactForm = ({ onSubmit, onDeleteContact, contact }) => {
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',
@@ -258,16 +305,20 @@ const ContactForm = ({ onSubmit, contact }) => {
 
   return (
     <div>
-      <ButtonsWrapper>
-        <Button onClick={addRoyalBrocadeTopForm}>Royal Brocade Top</Button>
-        <Button onClick={addTrouserForm}>Trouser</Button>
-        <Button onClick={addAgbadaForm}>Agbada</Button>
-        <Button onClick={addCapForm}>Cap</Button>
-        <Button onClick={addSuitTuxForm}>Suit Tux</Button>
-        <Button onClick={addWaistCoatForm}>Waist Coat</Button>
-        <Button onClick={addShirtForm}>Shirt</Button>
-        <Button onClick={addFemaleMeasurementForm}>Female Measurement</Button>
-      </ButtonsWrapper>
+      <AddFormButtonsWrapper>
+        <AddFormButton onClick={addRoyalBrocadeTopForm}>
+          Royal Brocade Top
+        </AddFormButton>
+        <AddFormButton onClick={addTrouserForm}>Trouser</AddFormButton>
+        <AddFormButton onClick={addAgbadaForm}>Agbada</AddFormButton>
+        <AddFormButton onClick={addCapForm}>Cap</AddFormButton>
+        <AddFormButton onClick={addSuitTuxForm}>Suit Tux</AddFormButton>
+        <AddFormButton onClick={addWaistCoatForm}>Waist Coat</AddFormButton>
+        <AddFormButton onClick={addShirtForm}>Shirt</AddFormButton>
+        <AddFormButton onClick={addFemaleMeasurementForm}>
+          Female Measurement
+        </AddFormButton>
+      </AddFormButtonsWrapper>
 
       <form onSubmit={onSubmitForm}>
         {/* GENERAL FORM */}
@@ -373,9 +424,16 @@ const ContactForm = ({ onSubmit, contact }) => {
             />
           ))}
 
-        <button type='submit' onSubmit={onSubmit}>
-          {contact ? 'UPDATE  CONTACT' : 'ADD CONTACT'}
-        </button>
+        <ButtonsWrapper>
+          <ButtonAdd type='submit'>
+            {contact ? 'UPDATE  CONTACT' : 'ADD CONTACT'}
+          </ButtonAdd>
+          {contact && (
+            <ButtonDelete onClick={onDeleteContact}>
+              DELETE CONTACT
+            </ButtonDelete>
+          )}
+        </ButtonsWrapper>
       </form>
     </div>
   );

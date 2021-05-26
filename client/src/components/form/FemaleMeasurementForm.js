@@ -1,4 +1,14 @@
 import React from 'react';
+import { FaMinusCircle } from 'react-icons/fa';
+import {
+  Wrapper,
+  SubHeadingWrapper,
+  SubHeadingTitle,
+  Field,
+  Label,
+  Input,
+  styles,
+} from './FormResources';
 
 const FemaleMeasurementForm = ({
   index,
@@ -80,172 +90,207 @@ const FemaleMeasurementForm = ({
   };
 
   return (
-    <div>
-      <div>{`Form ${index + 1}`}</div>
-      <div
-        onClick={() => {
-          onRemoveForm(index);
-          console.log('clicked');
-        }}
-      >
-        X
-      </div>
+    <Wrapper>
+      <SubHeadingWrapper>
+        <SubHeadingTitle>{`Form ${index + 1}`}</SubHeadingTitle>
+        <FaMinusCircle
+          style={styles.delteIcon}
+          size={25}
+          onClick={() => {
+            onRemoveForm(index);
+          }}
+        />
+      </SubHeadingWrapper>
 
-      <input
-        type='text'
-        placeholder='Name'
-        name='name'
-        value={name}
-        required
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Shoulder'
-        name='shoulder'
-        value={shoulder}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Bust'
-        name='bust'
-        value={bust}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Under Bust'
-        name='underBust'
-        value={underBust}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Shoulder To Bust'
-        name='shoulderToBust'
-        value={shoulderToBust}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Stomach'
-        name='stomach'
-        value={stomach}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Neck'
-        name='neck'
-        value={neck}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Sleeve Length'
-        name='sleeveLength'
-        value={sleeveLength}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Round Sleeve'
-        name='roundSleeve'
-        value={roundSleeve}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Half Length'
-        name='halfLength'
-        value={halfLength}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Hip'
-        name='hip'
-        value={hip}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Blouse Length Long'
-        name='blouseLengthLong'
-        value={blouseLengthLong}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Blouse Length Short'
-        name='blouseLengthShort'
-        value={blouseLengthShort}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Gown Length Long'
-        name='gownLengthLong'
-        value={gownLengthLong}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Gown Length Short'
-        name='gownLengthShort'
-        value={gownLengthShort}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Dress Length Long'
-        name='dressLengthLong'
-        value={dressLengthLong}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Dress Length Short'
-        name='dressLengthShort'
-        value={dressLengthShort}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-    </div>
+      <Field>
+        <Label htmlFor='name'>Name</Label>
+        <Input
+          type='text'
+          name='name'
+          value={name}
+          required
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='shoulder'>Shoulder</Label>
+        <Input
+          type='text'
+          name='shoulder'
+          value={shoulder}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='bust'>Bust</Label>
+        <Input
+          type='text'
+          name='bust'
+          value={bust}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='underBust'>Under Bust</Label>
+        <Input
+          type='text'
+          name='underBust'
+          value={underBust}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='shoulderToBust'>Shoulder To Bust</Label>
+        <Input
+          type='text'
+          name='shoulderToBust'
+          value={shoulderToBust}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='stomach'>Stomach</Label>
+        <Input
+          type='text'
+          name='stomach'
+          value={stomach}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='neck'>Neck</Label>
+        <Input
+          type='text'
+          name='neck'
+          value={neck}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='sleeveLength'>Sleeve Length</Label>
+        <Input
+          type='text'
+          name='sleeveLength'
+          value={sleeveLength}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='roundSleeve'>Round Sleeve</Label>
+        <Input
+          type='text'
+          name='roundSleeve'
+          value={roundSleeve}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='halfLength'>Half Length</Label>
+        <Input
+          type='text'
+          name='halfLength'
+          value={halfLength}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='hip'>Hip</Label>
+        <Input
+          type='text'
+          name='hip'
+          value={hip}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='blouseLengthLong'>Blouse Length (Long)</Label>
+        <Input
+          type='text'
+          name='blouseLengthLong'
+          value={blouseLengthLong}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='blouseLengthShort'>Blouse Length (Short)</Label>
+        <Input
+          type='text'
+          name='blouseLengthShort'
+          value={blouseLengthShort}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='gownLengthLong'>Gown Length (Long)</Label>
+        <Input
+          type='text'
+          name='gownLengthLong'
+          value={gownLengthLong}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='gownLengthShort'>Gown Length (Short)</Label>
+        <Input
+          type='text'
+          name='gownLengthShort'
+          value={gownLengthShort}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='dressLengthLong'>Dress Length (Long)</Label>
+        <Input
+          type='text'
+          name='dressLengthLong'
+          value={dressLengthLong}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='dressLengthShort'>Dress Length (Short)</Label>
+        <Input
+          type='text'
+          name='dressLengthShort'
+          value={dressLengthShort}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+    </Wrapper>
   );
 };
 

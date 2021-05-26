@@ -1,30 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  margin-bottom: 6rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-const Field = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1.5rem;
-`;
-
-const Label = styled.label`
-  background: #f1f1f1;
-  width: 40%;
-  padding: 0.5rem 1.5rem;
-`;
-
-const Input = styled.input`
-  background: #f9f9f9;
-  width: 100%;
-  padding: 0.5rem 3rem;
-  border: none;
-`;
+import { Wrapper, Field, Label, Input,} from './FormResources';
 
 const GeneralForm = ({ generalData, setGeneralData }) => {
   const { name, phone, email, address, dob, anniversary } = generalData;

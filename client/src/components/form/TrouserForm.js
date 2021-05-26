@@ -1,4 +1,14 @@
 import React from 'react';
+import { FaMinusCircle } from 'react-icons/fa';
+import {
+  Wrapper,
+  SubHeadingWrapper,
+  SubHeadingTitle,
+  Field,
+  Label,
+  Input,
+  styles,
+} from './FormResources';
 
 const TrouserForm = ({ index, trouserArr, setTrouserArr }) => {
   const { name, waist, lap, length, knee, flap, hip, lowerLimb, mouthAnkle } =
@@ -41,100 +51,119 @@ const TrouserForm = ({ index, trouserArr, setTrouserArr }) => {
   };
 
   return (
-    <div>
-      <div>{`Form ${index + 1}`}</div>
-      <div
-        onClick={() => {
-          onRemoveForm(index);
-          console.log('clicked');
-        }}
-      >
-        X
-      </div>
+    <Wrapper>
+      <SubHeadingWrapper>
+        <SubHeadingTitle>{`Form ${index + 1}`}</SubHeadingTitle>
+        <FaMinusCircle
+          style={styles.delteIcon}
+          size={25}
+          onClick={() => {
+            onRemoveForm(index);
+          }}
+        />
+      </SubHeadingWrapper>
 
-      <input
-        type='text'
-        placeholder='Name'
-        name='name'
-        value={name}
-        required
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Waist'
-        name='waist'
-        value={waist}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Lap'
-        name='lap'
-        value={lap}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Length'
-        name='length'
-        value={length}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Knee'
-        name='knee'
-        value={knee}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Flap'
-        name='flap'
-        value={flap}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Hip'
-        name='hip'
-        value={hip}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Lower Limb'
-        name='lowerLimb'
-        value={lowerLimb}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Mouth Ankle'
-        name='mouthAnkle'
-        value={mouthAnkle}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-    </div>
+      <Field>
+        <Label htmlFor='name'>Name</Label>
+        <Input
+          type='text'
+          name='name'
+          value={name}
+          required
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='waist'>Waist</Label>
+        <Input
+          type='text'
+          name='waist'
+          value={waist}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='lap'>Lap</Label>
+        <Input
+          type='text'
+          name='lap'
+          value={lap}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='length'>Length</Label>
+        <Input
+          type='text'
+          name='length'
+          value={length}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='knee'>Knee</Label>
+        <Input
+          type='text'
+          name='knee'
+          value={knee}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='flap'>Flap</Label>
+        <Input
+          type='text'
+          name='flap'
+          value={flap}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='hip'>Hip</Label>
+        <Input
+          type='text'
+          name='hip'
+          value={hip}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='lowerLimb'>Lower Limb</Label>
+        <Input
+          type='text'
+          name='lowerLimb'
+          value={lowerLimb}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='mouthAnkle'>Mouth Ankle</Label>
+        <Input
+          type='text'
+          name='mouthAnkle'
+          value={mouthAnkle}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+    </Wrapper>
   );
 };
 

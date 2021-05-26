@@ -1,27 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const ListItemWrapper = styled.div`
-  margin-bottom: 3rem;
-`;
-
-const Field = styled.p`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1.5rem;
-`;
-
-const Parameter = styled.span`
-  background: #f1f1f1;
-  width: 40%;
-  padding: 0.5rem 1.5rem;
-`;
-
-const Value = styled.span`
-  background: #f9f9f9;
-  width: 100%;
-  padding: 0.5rem 3rem;
-`;
+import { ListItemWrapper, Field, Parameter, Value } from '../ViewsResources';
 
 const RoyalBrocadeTopListItem = ({ RBT }) => {
   const {
@@ -67,19 +45,19 @@ const RoyalBrocadeTopListItem = ({ RBT }) => {
       )}
       {roundSleeve && (
         <Field>
-          <Parameter>RoundSleeve</Parameter>
+          <Parameter>Round Sleeve</Parameter>
           <Value>{roundSleeve}</Value>
         </Field>
       )}
       {sleeveLength && (
         <Field>
-          <Parameter>SleeveLength</Parameter>
+          <Parameter>Sleeve Length</Parameter>
           <Value>{sleeveLength}</Value>
         </Field>
       )}
       {shortSleeveLength && (
         <Field>
-          <Parameter>ShortSleeveLength</Parameter>
+          <Parameter>Short Sleeve Length</Parameter>
           <Value>{shortSleeveLength}</Value>
         </Field>
       )}
@@ -97,19 +75,19 @@ const RoyalBrocadeTopListItem = ({ RBT }) => {
       )}
       {cuffWrist && (
         <Field>
-          <Parameter>CuffWrist</Parameter>
+          <Parameter>Cuff Wrist</Parameter>
           <Value>{cuffWrist}</Value>
         </Field>
       )}
       {threeFourSleeve && (
         <Field>
-          <Parameter>ThreeFourSleeve</Parameter>
+          <Parameter>3/4 Sleeve</Parameter>
           <Value>{threeFourSleeve}</Value>
         </Field>
       )}
       {threeFourRoundSleeve && (
         <Field>
-          <Parameter>ThreeFourRoundSleeve</Parameter>
+          <Parameter>3/4 Round Sleeve</Parameter>
           <Value>{threeFourRoundSleeve}</Value>
         </Field>
       )}

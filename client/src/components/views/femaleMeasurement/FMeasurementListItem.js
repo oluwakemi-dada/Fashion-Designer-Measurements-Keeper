@@ -1,27 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const ListItemWrapper = styled.div`
-  margin-bottom: 3rem;
-`;
-
-const Field = styled.p`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1.5rem;
-`;
-
-const Parameter = styled.span`
-  background: #f1f1f1;
-  width: 40%;
-  padding: 0.5rem 1.5rem;
-`;
-
-const Value = styled.span`
-  background: #f9f9f9;
-  width: 100%;
-  padding: 0.5rem 3rem;
-`;
+import { ListItemWrapper, Field, Parameter, Value } from '../ViewsResources';
 
 const FMeasurementListItem = ({ femaleMeasurement }) => {
   const {
@@ -66,13 +44,13 @@ const FMeasurementListItem = ({ femaleMeasurement }) => {
       )}
       {underBust && (
         <Field>
-          <Parameter>UnderBust</Parameter>
+          <Parameter>Under Bust</Parameter>
           <Value>{underBust}</Value>
         </Field>
       )}
       {shoulderToBust && (
         <Field>
-          <Parameter>ShoulderToBust</Parameter>
+          <Parameter>Shoulder To Bust</Parameter>
           <Value>{shoulderToBust}</Value>
         </Field>
       )}
@@ -90,19 +68,19 @@ const FMeasurementListItem = ({ femaleMeasurement }) => {
       )}
       {sleeveLength && (
         <Field>
-          <Parameter>SleeveLength</Parameter>
+          <Parameter>Sleeve Length</Parameter>
           <Value>{sleeveLength}</Value>
         </Field>
       )}
       {roundSleeve && (
         <Field>
-          <Parameter>RoundSleeve</Parameter>
+          <Parameter>Round Sleeve</Parameter>
           <Value>{roundSleeve}</Value>
         </Field>
       )}
       {halfLength && (
         <Field>
-          <Parameter>HalfLength</Parameter>
+          <Parameter>Half Length</Parameter>
           <Value>{halfLength}</Value>
         </Field>
       )}
@@ -114,37 +92,37 @@ const FMeasurementListItem = ({ femaleMeasurement }) => {
       )}
       {blouseLengthLong && (
         <Field>
-          <Parameter>BlouseLengthLong</Parameter>
+          <Parameter>Blouse Length (Long)</Parameter>
           <Value>{blouseLengthLong}</Value>
         </Field>
       )}
       {blouseLengthShort && (
         <Field>
-          <Parameter>BlouseLengthShort</Parameter>
+          <Parameter>Blouse Length (Short)</Parameter>
           <Value>{blouseLengthShort}</Value>
         </Field>
       )}
       {gownLengthLong && (
         <Field>
-          <Parameter>GownLengthLong</Parameter>
+          <Parameter>Gown Length (Long)</Parameter>
           <Value>{gownLengthLong}</Value>
         </Field>
       )}
       {gownLengthShort && (
         <Field>
-          <Parameter>GownLengthShort</Parameter>
+          <Parameter>Gown Length (Short)</Parameter>
           <Value>{gownLengthShort}</Value>
         </Field>
       )}
       {dressLengthLong && (
         <Field>
-          <Parameter>DressLengthLong</Parameter>
+          <Parameter>Dress Length (Long)</Parameter>
           <Value>{dressLengthLong}</Value>
         </Field>
       )}
       {dressLengthShort && (
         <Field>
-          <Parameter>DressLengthShort</Parameter>
+          <Parameter>Dress Length (Short)</Parameter>
           <Value>{dressLengthShort}</Value>
         </Field>
       )}

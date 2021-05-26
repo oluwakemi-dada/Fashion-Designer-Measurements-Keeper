@@ -1,4 +1,14 @@
 import React from 'react';
+import { FaMinusCircle } from 'react-icons/fa';
+import {
+  Wrapper,
+  SubHeadingWrapper,
+  SubHeadingTitle,
+  Field,
+  Label,
+  Input,
+  styles,
+} from './FormResources';
 
 const CapForm = ({ index, capArr, setCapArr }) => {
   const { name, cap } = capArr[index];
@@ -24,37 +34,42 @@ const CapForm = ({ index, capArr, setCapArr }) => {
   };
 
   return (
-    <div>
-      <div>{`Form ${index + 1}`}</div>
-      <div
-        onClick={() => {
-          onRemoveForm(index);
-          console.log('clicked');
-        }}
-      >
-        X
-      </div>
+    <Wrapper>
+      <SubHeadingWrapper>
+        <SubHeadingTitle>{`Form ${index + 1}`}</SubHeadingTitle>
+        <FaMinusCircle
+          style={styles.delteIcon}
+          size={25}
+          onClick={() => {
+            onRemoveForm(index);
+          }}
+        />
+      </SubHeadingWrapper>
 
-      <input
-        type='text'
-        placeholder='Name'
-        name='name'
-        value={name}
-        required
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-      <input
-        type='text'
-        placeholder='Cap'
-        name='cap'
-        value={cap}
-        onChange={(e) => {
-          onChange(e, index);
-        }}
-      />
-    </div>
+      <Field>
+        <Label htmlFor='name'>Name</Label>
+        <Input
+          type='text'
+          name='name'
+          value={name}
+          required
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+      <Field>
+        <Label htmlFor='cap'>Cap</Label>
+        <Input
+          type='text'
+          name='cap'
+          value={cap}
+          onChange={(e) => {
+            onChange(e, index);
+          }}
+        />
+      </Field>
+    </Wrapper>
   );
 };
 

@@ -42,9 +42,14 @@ const ListItemIcon = styled.i`
 const Button = styled.div`
   display: inline-block;
   background: #0078e7;
-  padding: 1rem 1.3rem;
+  height: 4rem;
+  width: 11rem;
   font-size: 1.3rem;
   font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
@@ -53,6 +58,17 @@ const Button = styled.div`
     background: #0370d6;
   }
 `;
+
+const styles = {
+  link: {
+    color: '#fff',
+    height: '4rem',
+    width: '11rem',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+};
 
 const ContactItem = ({ contact }) => {
   const { id, name, email, phone } = contact;
@@ -72,7 +88,7 @@ const ContactItem = ({ contact }) => {
         </ListItem>
       </ul>
       <Button>
-        <Link to={`/contacts/${id}`} style={{ color: '#fff' }}>
+        <Link to={`/contacts/${id}`} style={styles.link}>
           View Contact
         </Link>
       </Button>
