@@ -26,7 +26,7 @@ const ContactsFilter = () => {
     if (filtered === null) {
       text.current.value = '';
     }
-  }, []);
+  }, [filtered]);
 
   const onChangeFilter = (e) => {
     if (text.current.value !== '') {

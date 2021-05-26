@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavbarMenu = styled.div`
@@ -24,33 +24,25 @@ const List = styled.ul`
   display: flex;
 `;
 
-const ListItem = styled.li`
-  &:hover {
-    color: red;
-  }
-`;
-
-const LinkStyles = {
-  color: '#fff',
-  padding: '0.5rem',
-  margin: '0 0.5rem',
-  fontWeight: '500',
-};
-
 const Navbar = ({ title }) => {
   return (
     <NavbarMenu>
       <Logo>{title}</Logo>
       <List>
         <li>
-          <Link to='/' style={LinkStyles}>
+          <NavLink to='/' className='navlink' activeClassName='selected' exact>
             Dashboard
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to='/create' style={LinkStyles}>
+          <NavLink
+            to='/create'
+            className='navlink'
+            activeClassName='selected'
+            exact
+          >
             Create Contact
-          </Link>
+          </NavLink>
         </li>
       </List>
     </NavbarMenu>
