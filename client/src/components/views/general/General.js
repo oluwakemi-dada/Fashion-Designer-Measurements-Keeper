@@ -5,6 +5,7 @@ import {
   Field,
   ParameterGeneral,
   Value,
+  ValueGeneral
 } from '../ViewsResources';
 
 const General = ({ contact }) => {
@@ -15,37 +16,37 @@ const General = ({ contact }) => {
       {name && (
         <Field>
           <ParameterGeneral>Name</ParameterGeneral>
-          <Value>{name}</Value>
+          <ValueGeneral>{name}</ValueGeneral>
         </Field>
       )}
       {phone && (
         <Field>
           <ParameterGeneral>Phone</ParameterGeneral>
-          <Value>{phone}</Value>
+          <ValueGeneral>{phone}</ValueGeneral>
         </Field>
       )}
       {email && (
         <Field>
           <ParameterGeneral>Email</ParameterGeneral>
-          <Value>{email}</Value>
+          <ValueGeneral>{email}</ValueGeneral>
         </Field>
       )}
       {address && (
         <Field>
           <ParameterGeneral>Address</ParameterGeneral>
-          <Value>{address}</Value>
+          <ValueGeneral>{address}</ValueGeneral>
         </Field>
       )}
       {dob && (
         <Field>
           <ParameterGeneral>D.O.B</ParameterGeneral>
-          <Value>{dob}</Value>
+          <ValueGeneral>{dob}</ValueGeneral>
         </Field>
       )}
       {anniversary && (
         <Field>
           <ParameterGeneral>Anniversary</ParameterGeneral>
-          <Value>{anniversary}</Value>
+          <ValueGeneral>{anniversary}</ValueGeneral>
         </Field>
       )}
     </Wrapper>

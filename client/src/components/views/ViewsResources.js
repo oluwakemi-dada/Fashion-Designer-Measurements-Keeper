@@ -57,3 +57,13 @@ export const Value = styled.span`
   width: 100%;
   padding: 0.5rem 3rem;
 `;
+
+export const ValueGeneral = styled.span`
+  background: #f9f9f9;
+  width: 100%;
+  padding: 0.5rem 3rem;
+
+  @media (max-width: 550px) {
+    padding: 0.5rem 1rem 0.5rem 1.7rem;
+  }
+`;
