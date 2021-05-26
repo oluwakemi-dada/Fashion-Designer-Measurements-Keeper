@@ -4,8 +4,7 @@ import {
   Title,
   Field,
   ParameterGeneral,
-  Value,
-  ValueGeneral
+  ValueGeneral,
 } from '../ViewsResources';
 
 const General = ({ contact }) => {
