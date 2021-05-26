@@ -29,6 +29,22 @@ export const Label = styled.label`
   background: #f1f1f1;
   width: 40%;
   padding: 0.5rem 1.5rem;
+
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
+  @media (max-width: 700px) {
+    width: 75%;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -36,6 +52,14 @@ export const Input = styled.input`
   width: 100%;
   padding: 0.5rem 3rem;
   border: none;
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
+
+  @media (max-width: 550px) {
+    width: 70%;
+  }
 `;
 
 export const styles = {

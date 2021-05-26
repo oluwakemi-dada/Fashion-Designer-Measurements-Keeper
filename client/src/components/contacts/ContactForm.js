@@ -16,11 +16,20 @@ const AddFormButtonsWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   margin-bottom: 5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 const AddFormButton = styled.div`
   background: #f4f4f4;
   box-shadow: 0.05rem 0.05rem 0.3rem #999;
-  padding: 2rem 1rem;
+  padding: 1rem;
+  height: 7rem;
   text-align: center;
   cursor: pointer;
   display: flex;

@@ -22,6 +22,7 @@ const Logo = styled.h1`
 
 const List = styled.ul`
   display: flex;
+  align-items: center;
 `;
 
 const Navbar = ({ title }) => {

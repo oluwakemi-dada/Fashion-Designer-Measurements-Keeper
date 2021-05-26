@@ -1,5 +1,11 @@
 import React from 'react';
-import { Wrapper, Title, Field, Parameter, Value } from '../ViewsResources';
+import {
+  Wrapper,
+  Title,
+  Field,
+  ParameterGeneral,
+  Value,
+} from '../ViewsResources';
 
 const General = ({ contact }) => {
   const { name, phone, email, address, dob, anniversary } = contact;
@@ -8,37 +14,37 @@ const General = ({ contact }) => {
       <Title>General Info</Title>
       {name && (
         <Field>
-          <Parameter>Name</Parameter>
+          <ParameterGeneral>Name</ParameterGeneral>
           <Value>{name}</Value>
         </Field>
       )}
       {phone && (
         <Field>
-          <Parameter>Phone</Parameter>
+          <ParameterGeneral>Phone</ParameterGeneral>
           <Value>{phone}</Value>
         </Field>
       )}
       {email && (
         <Field>
-          <Parameter>Email</Parameter>
+          <ParameterGeneral>Email</ParameterGeneral>
           <Value>{email}</Value>
         </Field>
       )}
       {address && (
         <Field>
-          <Parameter>Address</Parameter>
+          <ParameterGeneral>Address</ParameterGeneral>
           <Value>{address}</Value>
         </Field>
       )}
       {dob && (
         <Field>
-          <Parameter>D.O.B</Parameter>
+          <ParameterGeneral>D.O.B</ParameterGeneral>
           <Value>{dob}</Value>
         </Field>
       )}
       {anniversary && (
         <Field>
-          <Parameter>Anniversary</Parameter>
+          <ParameterGeneral>Anniversary</ParameterGeneral>
           <Value>{anniversary}</Value>
         </Field>
       )}
