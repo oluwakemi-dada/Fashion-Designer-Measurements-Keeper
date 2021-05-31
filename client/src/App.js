@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import CreateContact from './components/pages/CreateContact';
 import EditContact from './components/pages/EditContact';
 import ViewContact from './components/pages/ViewContact';
+import NotFoundPage from './components/pages/NotFoundPage';
 
 import ContactState from './context/contact/ContactState';
 import './App.css';
@@ -28,7 +29,7 @@ const App = () => {
               <Route exact path='/create' component={CreateContact} />
               <Route exact path='/contacts/:id' component={ViewContact} />
               <Route exact path='/edit/:id' component={EditContact} />
-              {/*<Route component={NotFoundPage} /> */}
+              <Route component={NotFoundPage} />
             </Switch>
           </Container>
         </Fragment>
