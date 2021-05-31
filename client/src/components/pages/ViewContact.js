@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ContactContext from '../../context/contact/contactContext';
@@ -69,6 +69,11 @@ const styles = {
 };
 
 const ViewContact = (props) => {
+  useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+  });
+
   const contactContext = useContext(ContactContext);
   const { contacts } = contactContext;
 

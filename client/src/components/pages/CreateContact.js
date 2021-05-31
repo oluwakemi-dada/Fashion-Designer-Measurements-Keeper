@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import ContactForm from '../contacts/ContactForm';
 import ContactContext from '../../context/contact/contactContext';
@@ -29,6 +29,11 @@ const Title = styled.h1`
 `;
 
 const CreateContact = (props) => {
+  useEffect(() => {
+    // Scroll to top
+    window.scrollTo(0, 0);
+  });
+
   const contactContext = useContext(ContactContext);
   const { addContact } = contactContext;
 

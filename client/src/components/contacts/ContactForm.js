@@ -94,7 +94,7 @@ const ButtonDelete = styled.div`
   }
 `;
 
-const ContactForm = ({ onSubmit, onDeleteContact, contact }) => {
+const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',
@@ -442,7 +442,7 @@ const ContactForm = ({ onSubmit, onDeleteContact, contact }) => {
             {contact ? 'UPDATE  CONTACT' : 'ADD CONTACT'}
           </ButtonAdd>
           {contact && (
-            <ButtonDelete onClick={onDeleteContact}>
+            <ButtonDelete onClick={onConfirmDeletion}>
               DELETE CONTACT
             </ButtonDelete>
           )}

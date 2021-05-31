@@ -48,3 +48,71 @@ a {
 .selected {
   font-weight: 600;
 }
+
+/* Modal */
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(51, 51, 51, 0.89);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.Modal {
+  background: #fff;
+  color: var(--dark-color);
+  box-shadow: 0 0 0.3rem #f1f1f1;
+  width: 30%;
+  height: 20rem;
+  padding: 3.2rem;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .Modal {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Modal {
+    width: 55%;
+  }
+}
+
+@media (max-width: 450px) {
+  .Modal {
+    width: 70%;
+  }
+}
+
+@media (max-width: 300px) {
+  .Modal {
+    width: 90%;
+  }
+}
