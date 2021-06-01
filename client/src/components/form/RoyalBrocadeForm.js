@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaMinusCircle } from 'react-icons/fa';
+import Modal from 'react-modal';
 import {
   Wrapper,
   SubHeadingWrapper,
@@ -9,12 +10,15 @@ import {
   Input,
   styles,
 } from './FormResources';
+import { ModalHeading, ButtonsWrapper, Button } from './ModalResources';
 
 const RoyalBrocadeForm = ({
   index,
   royalBrocadeTopArr,
   setRoyalBrocadeTopArr,
 }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
   // Destructure data from the current index
   const {
     name,
@@ -73,6 +77,28 @@ const RoyalBrocadeForm = ({
     setRoyalBrocadeTopArr(newArr);
   };
 
+   // MODAL
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const onConfirmDeletion = () => {
+    openModal();
+  };
+
+  const onCancelDeletion = () => {
+    closeModal();
+  };
+
+  const onDeleteForm = () => {
+    onRemoveForm(index);
+    closeModal();
+  };
+
   return (
     <Wrapper>
       <SubHeadingWrapper>
@@ -80,11 +106,24 @@ const RoyalBrocadeForm = ({
         <FaMinusCircle
           style={styles.delteIcon}
           size={25}
-          onClick={() => {
-            onRemoveForm(index);
-          }}
+          onClick={onConfirmDeletion}
         />
       </SubHeadingWrapper>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel='Confirm deletion'
+        closeTimeoutMS={200}
+        className='Modal'
+        overlayClassName='Overlay'
+      >
+        <ModalHeading>Delete Form?</ModalHeading>
+        <ButtonsWrapper>
+          <Button onClick={onDeleteForm}>YES</Button>
+          <Button onClick={onCancelDeletion}>NO</Button>
+        </ButtonsWrapper>
+      </Modal>
 
       <Field>
         <Label htmlFor='name'>Name</Label>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
+import Modal from 'react-modal'
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
 import TrouserForm from '../form/TrouserForm';
@@ -95,6 +96,11 @@ const ButtonDelete = styled.div`
 `;
 
 const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
+  useEffect(() => {
+    // ModoL
+    Modal.setAppElement('#root');
+  });
+
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',

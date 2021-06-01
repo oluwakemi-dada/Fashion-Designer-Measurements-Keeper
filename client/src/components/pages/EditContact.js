@@ -59,6 +59,7 @@ const EditContact = (props) => {
     }
   };
 
+  // Modal
   const openModal = () => {
     setIsOpen(true);
   };
