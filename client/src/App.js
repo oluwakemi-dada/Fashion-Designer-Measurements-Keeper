@@ -9,6 +9,7 @@ import ViewContact from './components/pages/ViewContact';
 import NotFoundPage from './components/pages/NotFoundPage';
 
 import ContactState from './context/contact/ContactState';
+import AlertState from './context/alert/AlertState';
 import './App.css';
 
 const Container = styled.div`
@@ -20,20 +21,22 @@ const Container = styled.div`
 const App = () => {
   return (
     <ContactState>
-      <Router>
-        <Fragment>
-          <Navbar />
-          <Container>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/create' component={CreateContact} />
-              <Route exact path='/contacts/:id' component={ViewContact} />
-              <Route exact path='/edit/:id' component={EditContact} />
-              <Route component={NotFoundPage} />
-            </Switch>
-          </Container>
-        </Fragment>
-      </Router>
+      <AlertState>
+        <Router>
+          <Fragment>
+            <Navbar />
+            <Container>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/create' component={CreateContact} />
+                <Route exact path='/contacts/:id' component={ViewContact} />
+                <Route exact path='/edit/:id' component={EditContact} />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </Container>
+          </Fragment>
+        </Router>
+      </AlertState>
     </ContactState>
   );
 };

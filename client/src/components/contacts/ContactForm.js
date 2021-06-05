@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
-import Modal from 'react-modal'
+import Modal from 'react-modal';
 import GeneralForm from '../form/GeneralForm';
 import RoyalBrocadeForm from '../form/RoyalBrocadeForm';
 import TrouserForm from '../form/TrouserForm';
@@ -11,6 +11,8 @@ import SuitTuxForm from '../form/SuitTuxForm';
 import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
+import AlertContext from '../../context/alert/alertContext';
+import Alert from '../alert/Alert';
 
 const AddFormButtonsWrapper = styled.div`
   display: grid;
@@ -101,6 +103,9 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
     Modal.setAppElement('#root');
   });
 
+  const alertContext = useContext(AlertContext);
+  const { alert, setAlert } = alertContext;
+
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
     name: contact ? contact.name : '',
@@ -153,6 +158,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD ROYAL BROCADE FORM
   const addRoyalBrocadeTopForm = () => {
+    setAlert('Royal Brocade Top added', 'success');
     setRoyalBrocadeTopArr([
       ...royalBrocadeTopArr,
       {
@@ -175,6 +181,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD TROUSER FORM
   const addTrouserForm = () => {
+    setAlert('Trouser added', 'success');
     setTrouserArr([
       ...trouserArr,
       {
@@ -194,6 +201,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD AGBADA FORM
   const addAgbadaForm = () => {
+    setAlert('Agbada added', 'success');
     setAgbadaArr([
       ...agbadaArr,
       {
@@ -207,6 +215,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD CAP FORM
   const addCapForm = () => {
+    setAlert('Cap added', 'success');
     setCapArr([
       ...capArr,
       {
@@ -219,6 +228,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD SUIT TUX FORM
   const addSuitTuxForm = () => {
+    setAlert('Suit Tux added', 'success');
     setSuitTuxArr([
       ...suitTuxArr,
       {
@@ -238,6 +248,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD WAIST COAT FORM
   const addWaistCoatForm = () => {
+    setAlert('Waist Coat added', 'success');
     setWaistCoatArr([
       ...waistCoatArr,
       {
@@ -252,6 +263,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD SHIRT FORM
   const addShirtForm = () => {
+    setAlert('Shirt added', 'success');
     setShirtArr([
       ...shirtArr,
       {
@@ -272,6 +284,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   // ADD FEMALE MEASUREMENT FORM
   const addFemaleMeasurementForm = () => {
+    setAlert('Female Measurement added', 'success');
     setFemaleMeasurementArr([
       ...femaleMeasurementArr,
       {
@@ -324,6 +337,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   return (
     <div>
+      {alert && <Alert />}
       <AddFormButtonsWrapper>
         <AddFormButton onClick={addRoyalBrocadeTopForm}>
           Royal Brocade Top
