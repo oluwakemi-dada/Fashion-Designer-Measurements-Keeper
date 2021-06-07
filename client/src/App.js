@@ -13,6 +13,7 @@ import Login from './components/auth/Login';
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
+import setAuthToken from './utils/setAuthToken';
 import './App.css';
 
 const Container = styled.div`
@@ -20,6 +21,10 @@ const Container = styled.div`
   overflow: hidden;
   padding: 1.5rem 2rem 4rem 2rem;
 `;
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (

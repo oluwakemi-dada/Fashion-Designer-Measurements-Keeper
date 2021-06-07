@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Modal from 'react-modal';
 import ContactForm from '../contacts/ContactForm';
 import ContactContext from '../../context/contact/contactContext';
+import AuthContext from '../../context/auth/authContext';
 import { Wrapper, Title } from './PageResources';
 
 const ModalHeading = styled.h3`
@@ -32,17 +33,22 @@ const Button = styled.button`
 `;
 
 const EditContact = (props) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const contactContext = useContext(ContactContext);
+  const authContext = useContext(AuthContext);
+
+  const { contacts, editContact, deleteContact } = contactContext;
+  const { loadUser } = authContext;
+
   useEffect(() => {
+    loadUser();
     // Scroll to top
     window.scrollTo(0, 0);
     // ModoL
     Modal.setAppElement('#root');
-  });
-
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const contactContext = useContext(ContactContext);
-  const { contacts, editContact, deleteContact } = contactContext;
+    // eslint-disable-next-line
+  }, []);
 
   // Contact to edit
   const contactToEdit = contacts.find(

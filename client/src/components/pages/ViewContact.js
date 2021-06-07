@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ContactContext from '../../context/contact/contactContext';
+import AuthContext from '../../context/auth/authContext';
 import General from '../views/general/General';
 import RoyalBrocadeTopList from '../views/royalBrocadeTop/RoyalBrocadeTopList';
 import TrouserList from '../views/trouser/TrouserList';
@@ -45,13 +46,18 @@ const styles = {
 };
 
 const ViewContact = (props) => {
+  const contactContext = useContext(ContactContext);
+  const authContext = useContext(AuthContext);
+
+  const { contacts } = contactContext;
+  const { loadUser } = authContext;
+
   useEffect(() => {
+    loadUser();
     // Scroll to top
     window.scrollTo(0, 0);
-  });
-
-  const contactContext = useContext(ContactContext);
-  const { contacts } = contactContext;
+    // eslint-disable-next-line
+  }, []);
 
   const contact = contacts.find(
     (contact) => contact.id === props.match.params.id
