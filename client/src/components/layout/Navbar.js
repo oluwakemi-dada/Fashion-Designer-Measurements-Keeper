@@ -50,6 +50,26 @@ const Navbar = ({ title }) => {
             Create Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to='/register'
+            className='navlink'
+            activeClassName='selected'
+            exact
+          >
+            Register
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/login'
+            className='navlink'
+            activeClassName='selected'
+            exact
+          >
+            Login
+          </NavLink>
+        </li>
       </List>
     </NavbarMenu>
   );

@@ -99,12 +99,12 @@ const ButtonDelete = styled.div`
 
 const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
   useEffect(() => {
-    // ModoL
+    // Modal
     Modal.setAppElement('#root');
   });
 
   const alertContext = useContext(AlertContext);
-  const { alert, setAlert } = alertContext;
+  const { setAlert } = alertContext;
 
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
@@ -337,7 +337,7 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
 
   return (
     <div>
-      {alert && <Alert />}
+      <Alert />
       <AddFormButtonsWrapper>
         <AddFormButton onClick={addRoyalBrocadeTopForm}>
           Royal Brocade Top

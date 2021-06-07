@@ -7,8 +7,11 @@ import CreateContact from './components/pages/CreateContact';
 import EditContact from './components/pages/EditContact';
 import ViewContact from './components/pages/ViewContact';
 import NotFoundPage from './components/pages/NotFoundPage';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
 
 import ContactState from './context/contact/ContactState';
+import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import './App.css';
 
@@ -20,24 +23,28 @@ const Container = styled.div`
 
 const App = () => {
   return (
-    <ContactState>
-      <AlertState>
-        <Router>
-          <Fragment>
-            <Navbar />
-            <Container>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/create' component={CreateContact} />
-                <Route exact path='/contacts/:id' component={ViewContact} />
-                <Route exact path='/edit/:id' component={EditContact} />
-                <Route component={NotFoundPage} />
-              </Switch>
-            </Container>
-          </Fragment>
-        </Router>
-      </AlertState>
-    </ContactState>
+    <AuthState>
+      <ContactState>
+        <AlertState>
+          <Router>
+            <Fragment>
+              <Navbar />
+              <Container>
+                <Switch>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/create' component={CreateContact} />
+                  <Route exact path='/contacts/:id' component={ViewContact} />
+                  <Route exact path='/edit/:id' component={EditContact} />
+                  <Route exact path='/register' component={Register} />
+                  <Route exact path='/login' component={Login} />
+                  <Route component={NotFoundPage} />
+                </Switch>
+              </Container>
+            </Fragment>
+          </Router>
+        </AlertState>
+      </ContactState>
+    </AuthState>
   );
 };
 
