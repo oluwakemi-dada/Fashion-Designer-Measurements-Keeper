@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FaSignOutAlt } from 'react-icons/fa';
+import AuthContext from '../../context/auth/authContext';
 
 const NavbarMenu = styled.div`
   background: #0078e7;
@@ -30,47 +32,73 @@ const List = styled.ul`
   align-items: center;
 `;
 
+const Logout = styled.a`
+  display: flex;
+  align-items: center;
+`;
+
 const Navbar = ({ title }) => {
+  const authContext = useContext(AuthContext);
+  const { isAuthenticated, logout } = authContext;
+
+  const onLogout = () => {
+    logout();
+  };
+
+  const authLinks = (
+    <Fragment>
+      <li>
+        <NavLink to='/' className='navlink' activeClassName='selected' exact>
+          Dashboard
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to='/create'
+          className='navlink'
+          activeClassName='selected'
+          exact
+        >
+          Create Contact
+        </NavLink>
+      </li>
+      <li>
+        <Logout onClick={onLogout} href='#!' className='navlink'>
+          <FaSignOutAlt style={{ marginRight: '.5rem' }} />
+          <span>Logout</span>
+        </Logout>
+      </li>
+    </Fragment>
+  );
+
+  const guestLinks = (
+    <Fragment>
+      <li>
+        <NavLink
+          to='/register'
+          className='navlink'
+          activeClassName='selected'
+          exact
+        >
+          Register
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to='/login'
+          className='navlink'
+          activeClassName='selected'
+          exact
+        >
+          Login
+        </NavLink>
+      </li>
+    </Fragment>
+  );
   return (
     <NavbarMenu>
       <Logo>{title}</Logo>
-      <List>
-        <li>
-          <NavLink to='/' className='navlink' activeClassName='selected' exact>
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/create'
-            className='navlink'
-            activeClassName='selected'
-            exact
-          >
-            Create Contact
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/register'
-            className='navlink'
-            activeClassName='selected'
-            exact
-          >
-            Register
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/login'
-            className='navlink'
-            activeClassName='selected'
-            exact
-          >
-            Login
-          </NavLink>
-        </li>
-      </List>
+      <List>{isAuthenticated ? authLinks : guestLinks}</List>
     </NavbarMenu>
   );
 };
