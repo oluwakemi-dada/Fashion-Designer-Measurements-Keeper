@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { v4 as uuid } from 'uuid';
+import axios from 'axios';
 import ContactContext from './contactContext';
 import contactReducer from './contactReducer';
 import {
@@ -8,101 +8,38 @@ import {
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
+  CONTACT_ERROR,
 } from '../types';
 
 const ContactState = (props) => {
   const initialState = {
-    contacts: [
-      {
-        id: uuid(),
-        name: 'Ayomide Peters',
-        phone: '111-222-3333',
-        email: 'peters@gmail.com',
-        address: 'Maryland, Lagos, Nigeria',
-        dob: '11/29/79',
-        anniversary: '6th March',
-        royalBrocadeTops: [
-          {
-            id: uuid(),
-            name: 'Mr Peters',
-            back: '17.5',
-            chest: '40',
-            length: '32.5 / 31',
-            roundSleeve: '32.5 / 31',
-            sleeveLength: '32.5 / 31',
-            shortSleeveLength: '32.5 / 31',
-            stomach: '32.5 / 31',
-            neck: '32.5 / 31',
-            cuffWrist: '32.5 / 31',
-            threeFourSleeve: '32.5 / 31',
-            threeFourRoundSleeve: '32.5 / 31',
-          },
-        ],
-        trousers: [
-          {
-            id: uuid(),
-            name: 'Mr Peters',
-            waist: '17.5',
-            chest: '40',
-            lap: '32.5 / 31',
-            length: '32.5 / 31',
-            knee: '32.5 / 31',
-            flap: '32.5 / 31',
-            hip: '32.5 / 31',
-            lowerlimb: '32.5 / 31',
-            mouthankle: '32.5 / 31',
-          },
-        ],
-        caps: [
-          {
-            id: uuid(),
-            name: 'Mr Peters',
-            cap: '12',
-          },
-        ],
-      },
-      {
-        id: uuid(),
-        name: 'Oyeleke John',
-        phone: '333-444-5555',
-        address: 'Maitama, Abuja, Nigeria',
-        dob: '10/9/97',
-        anniversary: '12th May',
-        agbadas: [
-          {
-            id: uuid(),
-            name: 'Mr Oyeleke',
-            sleeve: '13',
-            length: '40',
-          },
-          {
-            id: uuid(),
-            name: 'Mrs Oyeleke',
-            sleeve: '10',
-            length: '35',
-          },
-        ],
-        caps: [
-          {
-            id: uuid(),
-            name: 'Mr Oyeleke',
-            cap: '26',
-          },
-        ],
-      },
-    ],
+    contacts: [],
     filtered: null,
+    error: null,
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
   // Add Contact
-  const addContact = (contact) => {
-    contact.id = uuid();
-    dispatch({
-      type: ADD_CONTACT,
-      payload: contact,
-    });
+  const addContact = async (contact) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    try {
+      const res = await axios.post('/api/contacts', contact, config);
+      dispatch({
+        type: ADD_CONTACT,
+        payload: res.data,
+      });
+    } catch (error) {
+      dispatch({
+        type: CONTACT_ERROR,
+        payload: error.response.msg,
+      });
+    }
   };
 
   // Delete Contact
@@ -142,6 +79,7 @@ const ContactState = (props) => {
         contacts: state.contacts,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
         addContact,
         deleteContact,
         editContact,

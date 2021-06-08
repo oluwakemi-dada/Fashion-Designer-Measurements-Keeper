@@ -25,31 +25,31 @@ const ContactSchema = mongoose.Schema({
   anniversary: {
     type: String,
   },
-  royalBrocadeTop: {
+  royalBrocadeTops: {
     type: mongoose.Schema.Types.Array,
     ref: 'royalbrocadetop',
   },
-  trouser: {
+  trousers: {
     type: mongoose.Schema.Types.Array,
     ref: 'trouser',
   },
-  agbada: {
+  agbadas: {
     type: mongoose.Schema.Types.Array,
     ref: 'agbada',
   },
-  cap: {
+  caps: {
     type: mongoose.Schema.Types.Array,
     ref: 'cap',
   },
-  suitTux: {
+  suitTuxes: {
     type: mongoose.Schema.Types.Array,
     ref: 'suittux',
   },
-  waistCoat: {
+  waistCoats: {
     type: mongoose.Schema.Types.Array,
     ref: 'waistcoat',
   },
-  shirt: {
+  shirts: {
     type: mongoose.Schema.Types.Array,
     ref: 'shirt',
   },

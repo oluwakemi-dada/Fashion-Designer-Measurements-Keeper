@@ -12,4 +12,4 @@ const AgbadaSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('agbada', AgbadaSchema);
+module.exports = mongoose.model('agbadas', AgbadaSchema);

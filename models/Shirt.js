@@ -33,4 +33,4 @@ const ShirtSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('shirt', ShirtSchema);
+module.exports = mongoose.model('shirts', ShirtSchema);

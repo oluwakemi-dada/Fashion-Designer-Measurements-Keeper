@@ -30,4 +30,4 @@ const SuitTuxSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('suittux', SuitTuxSchema);
+module.exports = mongoose.model('suittuxes', SuitTuxSchema);

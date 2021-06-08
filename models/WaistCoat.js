@@ -15,4 +15,4 @@ const WaistCoatSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('waistcoat', WaistCoatSchema);
+module.exports = mongoose.model('waistcoats', WaistCoatSchema);

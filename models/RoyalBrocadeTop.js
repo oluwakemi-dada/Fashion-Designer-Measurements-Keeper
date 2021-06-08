@@ -39,4 +39,4 @@ const RoyalBrocadeTopSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('royalbrocadetop', RoyalBrocadeTopSchema);
+module.exports = mongoose.model('royalbrocadetops', RoyalBrocadeTopSchema);

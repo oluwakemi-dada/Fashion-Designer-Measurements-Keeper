@@ -30,4 +30,4 @@ const TrouserSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('trouser', TrouserSchema);
+module.exports = mongoose.model('trousers', TrouserSchema);

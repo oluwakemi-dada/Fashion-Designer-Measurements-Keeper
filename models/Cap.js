@@ -9,4 +9,4 @@ const CapSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('cap', CapSchema);
+module.exports = mongoose.model('caps', CapSchema);

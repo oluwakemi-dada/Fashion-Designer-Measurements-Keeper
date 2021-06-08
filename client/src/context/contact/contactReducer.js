@@ -4,6 +4,7 @@ import {
   UPDATE_CONTACT,
   FILTER_CONTACTS,
   CLEAR_FILTER,
+  CONTACT_ERROR,
 } from '../types';
 
 const contactReducer = (state, action) => {
@@ -45,6 +46,12 @@ const contactReducer = (state, action) => {
       return {
         ...state,
         filtered: null,
+      };
+
+    case CONTACT_ERROR:
+      return {
+        ...state,
+        error: action.payload,
       };
 
     default:
