@@ -9,6 +9,7 @@ import ViewContact from './components/pages/ViewContact';
 import NotFoundPage from './components/pages/NotFoundPage';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
@@ -36,7 +37,7 @@ const App = () => {
               <Navbar />
               <Container>
                 <Switch>
-                  <Route exact path='/' component={Home} />
+                  <PrivateRoute exact path='/' component={Home} />
                   <Route exact path='/create' component={CreateContact} />
                   <Route exact path='/contacts/:id' component={ViewContact} />
                   <Route exact path='/edit/:id' component={EditContact} />
