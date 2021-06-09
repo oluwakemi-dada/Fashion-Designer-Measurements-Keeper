@@ -12,7 +12,7 @@ import WaistCoatForm from '../form/WaistCoatForm';
 import ShirtForm from '../form/ShirtForm';
 import FemaleMeasurementForm from '../form/FemaleMeasurementForm';
 import AlertContext from '../../context/alert/alertContext';
-import Alert from '../alert/Alert';
+import Alert from '../layout/Alert';
 
 const AddFormButtonsWrapper = styled.div`
   display: grid;

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaSignOutAlt } from 'react-icons/fa';
 import AuthContext from '../../context/auth/authContext';
+import ContactContext from '../../context/contact/contactContext';
 
 const NavbarMenu = styled.div`
   background: #0078e7;
@@ -39,10 +40,14 @@ const Logout = styled.a`
 
 const Navbar = ({ title }) => {
   const authContext = useContext(AuthContext);
+  const contactContext = useContext(ContactContext);
+
   const { isAuthenticated, logout } = authContext;
+  const { clearContacts } = contactContext;
 
   const onLogout = () => {
     logout();
+    clearContacts()
   };
 
   const authLinks = (

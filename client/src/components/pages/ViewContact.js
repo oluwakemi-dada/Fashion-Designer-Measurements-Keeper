@@ -49,19 +49,34 @@ const ViewContact = (props) => {
   const contactContext = useContext(ContactContext);
   const authContext = useContext(AuthContext);
 
-  const { contacts } = contactContext;
+  const { contacts, getContacts } = contactContext;
   const { loadUser } = authContext;
+
+  // if (contacts === null) {
+  //   getContacts();
+  //   console.log(contacts);
+  // }
+
+  // const contact = contacts.find(
+  //   (contact) => contact._id === props.match.params.id
+  // );
+  let contact;
+
+  if (contacts) {
+    contact = contacts.find((contact) => contact._id === props.match.params.id);
+  } else {
+    getContacts();
+    // console.log(contacts);
+    contact = contacts.find((contact) => contact._id === props.match.params.id);
+  }
 
   useEffect(() => {
     loadUser();
+    console.log(contacts);
     // Scroll to top
     window.scrollTo(0, 0);
     // eslint-disable-next-line
-  }, []);
-
-  const contact = contacts.find(
-    (contact) => contact.id === props.match.params.id
-  );
+  }, [contacts]);
 
   return (
     <Wrapper>
@@ -76,7 +91,7 @@ const ViewContact = (props) => {
       <ShirtList contact={contact} />
       <FMeasurementList contact={contact} />
       <Button>
-        <Link to={`/edit/${contact.id}`} style={styles.link}>
+        <Link to={`/edit/${contact._id}`} style={styles.link}>
           Edit Contact
         </Link>
       </Button>

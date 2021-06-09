@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Wrapper, Title } from '../pages/PageResources';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
-import Alert from '../alert/Alert';
+import Alert from '../layout/Alert';
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);

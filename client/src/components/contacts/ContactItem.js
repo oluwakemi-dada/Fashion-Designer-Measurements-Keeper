@@ -84,7 +84,7 @@ const styles = {
 };
 
 const ContactItem = ({ contact }) => {
-  const { id, name, email, phone } = contact;
+  const { _id, name, email, phone } = contact;
 
   return (
     <Card>
@@ -101,7 +101,7 @@ const ContactItem = ({ contact }) => {
         </ListItem>
       </ul>
       <Button>
-        <Link to={`/contacts/${id}`} style={styles.link}>
+        <Link to={`/contacts/${_id}`} style={styles.link}>
           View Contact
         </Link>
       </Button>

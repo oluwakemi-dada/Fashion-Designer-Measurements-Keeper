@@ -52,11 +52,11 @@ const EditContact = (props) => {
 
   // Contact to edit
   const contactToEdit = contacts.find(
-    (contact) => contact.id === props.match.params.id
+    (contact) => contact._id === props.match.params.id
   );
 
   const onSubmit = (contact) => {
-    contact.id = props.match.params.id;
+    contact._id = props.match.params.id;
     console.log(contact);
     // Edit contact in contact context
     if (contact.name !== '' && contact.phone !== '') {
