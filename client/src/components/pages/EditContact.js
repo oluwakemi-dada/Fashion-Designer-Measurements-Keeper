@@ -65,7 +65,7 @@ const EditContact = (props) => {
 
   const onSubmit = (contact) => {
     contact._id = props.match.params.id;
-    console.log(contact);
+    console.log('EDIT', contact);
     // Edit contact in contact context
     if (contact.name !== '' && contact.phone !== '') {
       editContact(contact);
@@ -104,7 +104,6 @@ const EditContact = (props) => {
         onSubmit={onSubmit}
         contact={contactToEdit}
         onConfirmDeletion={onConfirmDeletion}
-        id={props.match.params.id}
       />
       <Modal
         isOpen={modalIsOpen}

@@ -97,21 +97,16 @@ const ButtonDelete = styled.div`
   }
 `;
 
-const ContactForm = ({ onSubmit, onConfirmDeletion, contact, id }) => {
+const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
   useEffect(() => {
     // Modal
     Modal.setAppElement('#root');
   }, []);
 
-  useEffect(() => {
-    // Modal
-  }, [contact]);
-
   const alertContext = useContext(AlertContext);
   const { setAlert } = alertContext;
 
-
-  console.log(contact);
+  // console.log(contact);
 
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({
@@ -337,6 +332,8 @@ const ContactForm = ({ onSubmit, onConfirmDeletion, contact, id }) => {
       shirts: shirtArr,
       femaleMeasurements: femaleMeasurementArr,
     };
+
+    console.log('FORM', formData);
 
     // Call function that adds formData to contact context
     onSubmit(formData);

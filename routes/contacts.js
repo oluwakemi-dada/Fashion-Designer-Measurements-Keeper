@@ -102,13 +102,13 @@ router.put('/:id', auth, async (req, res) => {
     address,
     dob,
     anniversary,
-    royalBrocadeTop,
-    trouser,
-    agbada,
-    cap,
-    suitTux,
-    waistCoat,
-    shirt,
+    royalBrocadeTops,
+    trousers,
+    agbadas,
+    caps,
+    suitTuxes,
+    waistCoats,
+    shirts,
     femaleMeasurements,
   } = req.body;
 
@@ -120,13 +120,13 @@ router.put('/:id', auth, async (req, res) => {
   if (address) contactFields.address = address;
   if (dob) contactFields.dob = dob;
   if (anniversary) contactFields.anniversary = anniversary;
-  if (royalBrocadeTop) contactFields.royalBrocadeTop = royalBrocadeTop;
-  if (trouser) contactFields.trouser = trouser;
-  if (agbada) contactFields.agbada = agbada;
-  if (cap) contactFields.cap = cap;
-  if (suitTux) contactFields.suitTux = suitTux;
-  if (waistCoat) contactFields.waistCoat = waistCoat;
-  if (shirt) contactFields.shirt = shirt;
+  if (royalBrocadeTops) contactFields.royalBrocadeTops = royalBrocadeTops;
+  if (trousers) contactFields.trousers = trousers;
+  if (agbadas) contactFields.agbadas = agbadas;
+  if (caps) contactFields.caps = caps;
+  if (suitTuxes) contactFields.suitTuxes = suitTuxes;
+  if (waistCoats) contactFields.waistCoats = waistCoats;
+  if (shirts) contactFields.shirts = shirts;
   if (femaleMeasurements) contactFields.femaleMeasurements = femaleMeasurements;
 
   try {
