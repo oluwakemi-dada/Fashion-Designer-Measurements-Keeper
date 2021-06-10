@@ -97,14 +97,21 @@ const ButtonDelete = styled.div`
   }
 `;
 
-const ContactForm = ({ onSubmit, onConfirmDeletion, contact }) => {
+const ContactForm = ({ onSubmit, onConfirmDeletion, contact, id }) => {
   useEffect(() => {
     // Modal
     Modal.setAppElement('#root');
-  });
+  }, []);
+
+  useEffect(() => {
+    // Modal
+  }, [contact]);
 
   const alertContext = useContext(AlertContext);
   const { setAlert } = alertContext;
+
+
+  console.log(contact);
 
   // GENERAL DATA
   const [generalData, setGeneralData] = useState({

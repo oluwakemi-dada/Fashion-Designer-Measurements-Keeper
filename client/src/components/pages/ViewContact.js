@@ -52,31 +52,25 @@ const ViewContact = (props) => {
   const { contacts, getContacts } = contactContext;
   const { loadUser } = authContext;
 
-  // if (contacts === null) {
-  //   getContacts();
-  //   console.log(contacts);
-  // }
-
-  // const contact = contacts.find(
-  //   (contact) => contact._id === props.match.params.id
-  // );
-  let contact;
-
-  if (contacts) {
-    contact = contacts.find((contact) => contact._id === props.match.params.id);
-  } else {
-    getContacts();
-    // console.log(contacts);
-    contact = contacts.find((contact) => contact._id === props.match.params.id);
-  }
-
   useEffect(() => {
     loadUser();
-    console.log(contacts);
     // Scroll to top
     window.scrollTo(0, 0);
     // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    if (!contacts) {
+      getContacts();
+    }
+
+    // eslint-disable-next-line
   }, [contacts]);
+
+  const contact = contacts
+    ? contacts.length &&
+      contacts.find((contact) => contact._id === props.match.params.id)
+    : [];
 
   return (
     <Wrapper>

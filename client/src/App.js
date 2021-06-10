@@ -38,9 +38,21 @@ const App = () => {
               <Container>
                 <Switch>
                   <PrivateRoute exact path='/' component={Home} />
-                  <Route exact path='/create' component={CreateContact} />
-                  <Route exact path='/contacts/:id' component={ViewContact} />
-                  <Route exact path='/edit/:id' component={EditContact} />
+                  <PrivateRoute
+                    exact
+                    path='/create'
+                    component={CreateContact}
+                  />
+                  <PrivateRoute
+                    exact
+                    path='/contacts/:id'
+                    component={ViewContact}
+                  />
+                  <PrivateRoute
+                    exact
+                    path='/edit/:id'
+                    component={EditContact}
+                  />
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                   <Route component={NotFoundPage} />

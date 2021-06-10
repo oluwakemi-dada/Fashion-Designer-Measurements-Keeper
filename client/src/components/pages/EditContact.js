@@ -38,22 +38,30 @@ const EditContact = (props) => {
   const contactContext = useContext(ContactContext);
   const authContext = useContext(AuthContext);
 
-  const { contacts, editContact, deleteContact } = contactContext;
+  const { contacts, editContact, deleteContact, getContacts } = contactContext;
   const { loadUser } = authContext;
 
   useEffect(() => {
     loadUser();
     // Scroll to top
     window.scrollTo(0, 0);
-    // ModoL
+    // ModaL
     Modal.setAppElement('#root');
     // eslint-disable-next-line
   }, []);
 
-  // Contact to edit
-  const contactToEdit = contacts.find(
-    (contact) => contact._id === props.match.params.id
-  );
+  useEffect(() => {
+    if (!contacts) {
+      getContacts();
+    }
+
+    // eslint-disable-next-line
+  }, [contacts]);
+
+  const contactToEdit = contacts
+    ? contacts.length &&
+      contacts.find((contact) => contact._id === props.match.params.id)
+    : [];
 
   const onSubmit = (contact) => {
     contact._id = props.match.params.id;
@@ -96,6 +104,7 @@ const EditContact = (props) => {
         onSubmit={onSubmit}
         contact={contactToEdit}
         onConfirmDeletion={onConfirmDeletion}
+        id={props.match.params.id}
       />
       <Modal
         isOpen={modalIsOpen}
