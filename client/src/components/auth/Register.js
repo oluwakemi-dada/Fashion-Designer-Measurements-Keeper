@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Wrapper, Title } from '../pages/PageResources';
+import { Wrapper, Title, Field, Input, Button } from './AuthResources';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import Alert from '../layout/Alert';
@@ -56,29 +56,29 @@ const Register = (props) => {
       </Title>
       <Alert />
       <form onSubmit={onSubmit}>
-        <div>
+        <Field>
           <label htmlFor='name'>Name</label>
-          <input
+          <Input
             type='text'
             name='name'
             value={name}
             onChange={onChange}
             required
           />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor='email'>Email Address</label>
-          <input
+          <Input
             type='email'
             name='email'
             value={email}
             onChange={onChange}
             required
           />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor='password'>Password</label>
-          <input
+          <Input
             type='password'
             name='password'
             value={password}
@@ -86,10 +86,10 @@ const Register = (props) => {
             required
             minLength='6'
           />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor='password2'>Confirm Password</label>
-          <input
+          <Input
             type='password'
             name='password2'
             value={password2}
@@ -97,8 +97,8 @@ const Register = (props) => {
             required
             minLength='6'
           />
-        </div>
-        <button type='submit'>Register</button>
+        </Field>
+        <Button type='submit'>Register</Button>
       </form>
     </Wrapper>
   );

@@ -23,4 +23,8 @@ export const Wrapper = styled.div`
 export const Title = styled.h1`
   text-align: center;
   margin-bottom: 3rem;
+
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
 `;

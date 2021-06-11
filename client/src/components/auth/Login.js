@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Wrapper, Title } from '../pages/PageResources';
+import { Wrapper, Title, Field, Input, Button } from './AuthResources';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import Alert from '../layout/Alert';
@@ -49,27 +49,27 @@ const Login = (props) => {
       </Title>
       <Alert />
       <form onSubmit={onSubmit}>
-        <div>
+        <Field>
           <label htmlFor='email'>Email Address</label>
-          <input
+          <Input
             type='email'
             name='email'
             value={email}
             onChange={onChange}
             required
           />
-        </div>
-        <div>
+        </Field>
+        <Field>
           <label htmlFor='password'>Password</label>
-          <input
+          <Input
             type='password'
             name='password'
             value={password}
             onChange={onChange}
             required
           />
-        </div>
-        <button type='submit'>Login</button>
+        </Field>
+        <Button type='submit'>Login</Button>
       </form>
     </Wrapper>
   );
