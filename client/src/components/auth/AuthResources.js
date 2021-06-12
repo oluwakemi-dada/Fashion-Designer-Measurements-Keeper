@@ -38,6 +38,8 @@ export const Input = styled.input`
   padding: 1rem;
   margin-bottom: 1.5rem;
   margin-top: 0.3rem;
+  border: 0.5px solid #999;
+  border-radius: 3px;
 `;
 
 export const Button = styled.button`
@@ -45,6 +47,7 @@ export const Button = styled.button`
   color: #fff;
   height: 4rem;
   width: 100%;
+  border-radius: 3px;
   margin-top: 0.5rem;
   border: none;
   font-size: 1.7rem;

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
-import Navbar from './components/layout/Navbar';
+import Navbar from './components/layout/menu/Navbar';
 import Home from './components/pages/Home';
 import CreateContact from './components/pages/CreateContact';
 import EditContact from './components/pages/EditContact';
