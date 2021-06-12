@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import HamburgerNav from './HamburgerNav';
 
@@ -17,22 +18,12 @@ const NavbarMenu = styled.div`
   top: 0;
 `;
 
-const Logo = styled.h1`
-  margin: 0.3rem 0;
-  font-weight: 700;
-  font-size: 3rem;
-  font-family: 'Dancing Script', cursive;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
 const Navbar = ({ title }) => {
   return (
     <NavbarMenu>
-      <Logo>{title}</Logo>
-
+      <Link to='/' className='logo'>
+        {title}
+      </Link>
       <HamburgerNav />
     </NavbarMenu>
   );

@@ -9,6 +9,7 @@ const HamburgerMenu = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 2;
+  cursor: pointer;
   display: none;
 
   @media (max-width: 768px) {

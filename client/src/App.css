@@ -32,6 +32,18 @@ a {
   text-decoration: none;
 }
 
+.logo {
+  margin: 0.3rem 0;
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
 /* Navigation */
 .navlink {
   color: var(--color-white);
