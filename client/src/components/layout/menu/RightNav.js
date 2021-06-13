@@ -23,7 +23,7 @@ const List = styled.ul`
     right: 0;
     height: 100vh;
     width: 100%;
-    background: #000080;
+    background: #0364be;
     justify-content: center;
     transition: transform 0.3s ease-in-out;
   }

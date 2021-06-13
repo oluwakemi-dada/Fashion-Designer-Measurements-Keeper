@@ -1,8 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Wrapper, Title, Field, Input, Button } from './AuthResources';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 import Alert from '../layout/Alert';
+
+const styles = {
+  forgotPassword: {
+    color: '#0078e7',
+  },
+  form: {
+    marginBottom: '1rem',
+  },
+};
 
 const Login = (props) => {
   const alertContext = useContext(AlertContext);
@@ -48,7 +58,7 @@ const Login = (props) => {
         Account <span style={{ color: '#0078E7' }}>Login</span>
       </Title>
       <Alert />
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={styles.form}>
         <Field>
           <label htmlFor='email'>Email Address</label>
           <Input
@@ -71,6 +81,9 @@ const Login = (props) => {
         </Field>
         <Button type='submit'>Login</Button>
       </form>
+      <Link to='#' style={styles.forgotPassword}>
+        Forgot password?
+      </Link>
     </Wrapper>
   );
 };
