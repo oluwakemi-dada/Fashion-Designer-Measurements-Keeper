@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://visionContactsDB:visionContactsDBPassword@visioncontactskeeper.bbhaj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtSecret": "mainvisionsecret"
-}
