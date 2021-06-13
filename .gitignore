@@ -2,6 +2,9 @@ node_modules/
 
 /client/build
 
+/config/default.json
+/config/production.json
+
 .DS_Store
 /client/.env.local
 /client/.env.development.local
