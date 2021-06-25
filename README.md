@@ -1,6 +1,6 @@
-# Getting Started with Contact Keeper
+# Fashion-Designer-Measurements-Keeper
 
-This project is a contact keeper for fashion designers. This app helps fashion designers to store clients information and measurements for any style of choice. The forms in this web application are created dynamically.
+This project is a measurement keeper for fashion designers. This app helps fashion designers to store clients information and measurements for any style of choice. The forms in this web application are created dynamically.
 This is a fullstack CRUD application with Authentication and database.
 
 Preview App - <a href="https://fashion-contact-keeper.herokuapp.com/">Contact Keeper</a>
