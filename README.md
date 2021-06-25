@@ -9,6 +9,8 @@ Preview App - <a href="https://fashion-contact-keeper.herokuapp.com/">Contact Ke
 
 - Reactjs
 - Nodejs
+- Express
+- MongoDB
 
 ## Get Started
 
