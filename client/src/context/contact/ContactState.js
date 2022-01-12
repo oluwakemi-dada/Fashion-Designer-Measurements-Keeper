@@ -12,7 +12,7 @@ import {
   CLEAR_FILTER,
   CONTACT_ERROR,
 } from '../types';
-
+                                                                       
 const ContactState = (props) => {
   const initialState = {
     contacts: null,
